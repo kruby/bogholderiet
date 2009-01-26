@@ -1,0 +1,56 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>Liste over indholdssider <%= link_to '[Ny side]', new_page_path %></h1>
+
+<table border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <!-- <th>P1</th>
+    	<th>ID</th>
+    	
+    	<th>P2</th>
+    	
+    	<th>Adm.</th>
+		<th>Navlabel</th>
+		<th>Overskrift</th> 
+			<th>Navn</th> -->
+	<th class='pos'>ID</th>
+	<th>Akt.</th>
+	<th>Navn</th>
+    <th>Titel</th>
+    <th>Indhold</th>
+	<th>Grafik</th>
+	<th>Class</th>
+	<th>Handling</th>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+	<td class='pos'><%=h page.id %></td>
+	<% 	if page.active 
+			@aktiv = '√' 
+		else 
+			@aktiv = '–' 
+		end %>
+	    <td class="pos"><%=link_to @aktiv, :action => 'active', :id => page.id%></td>
+	<!-- <td width=10px class='pos'><%#= '√' if page.active %></td> -->	
+    <td width=100px><%=h page.name %></td>
+	<td width=100px><%=h page.title %></td>
+    <td width=200px><%=h truncate(page.body, length = 30, truncate_string = "...") -%></td>
+	<td width=100px><%=h page.image %></td>
+	<td width=100px><%=h page.image_class %></td>
+
+    <td width=120px>
+	<%= link_to '[Vis]', page %>
+    <%= link_to '[Ret]', edit_page_path(page) %>
+    <%= link_to '[Slet]', page, :confirm => 'Er du sikker?', :method => :delete %>
+</td>
+  </tr>
+<% end %>
+<tr>
+  <tfoot></tfoot>
+</tr>
+</table>
+
+<br />
+</div>

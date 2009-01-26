@@ -1,0 +1,9 @@
+tmp/**/* 
+log/*.log 
+config/database.yml 
+db/schema.* 
+db/data_backup/* 
+.DS_Store 
+doc/api 
+doc/app
+*.log

@@ -1,0 +1,52 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Timeliste <%= link_to '[Ny registrering]', new_hour_path %></h1>
+
+<table>
+  <tr>
+	<!-- <th>ID</th> -->
+    <th>Bruger</th>
+    <th width='245'>Beskrivelse</th>
+    <th>Ant.</th>
+    <th class='pos'>Dato</th>
+	<th>Handling</th>
+  </tr>
+
+<% for hour in @hours %>
+	<% if session[:hour_id] == hour.id.to_s %>
+	
+	<% @hour = hour %>
+	
+	<%= render :partial => "hours/index_edit" %>
+
+	<% else %>
+	  <tr>
+		<!-- <td class='pos'><%#=h hour.id %></td> -->
+	    <td class='pos'><%=h User.find(hour.user_id).blogname rescue nil %></td>
+	    <td><%=h hour.description %></td>
+	    <td class='pos'><%=h hour.number %></td>
+	    <td class='dato'><%=h nice_date(hour.date) %></td>
+	    <td>
+		<% if current_user.id == hour.user_id %>
+		<%= link_to '[Ret]', edit_hour_path(hour) %>
+		<%= link_to '[Slet]', hour, :confirm => 'Er du sikker?', :method => :delete %>
+		<% end %>
+		<%= link_to '[Vis]', hour %></td>
+	  </tr>
+	<% end %>
+<% end %>
+
+<!-- <tr>
+    <td colspan='2'></td>
+    <td></td>
+ 	<td colspan='2'></td>
+</tr> -->
+
+</table>
+
+Total antal timer TKS: <%=  @Sum_timer = Hour.sum(:number, :conditions => ['user_id = ?', '1']) / 2%><br/>
+Total antal timer JST: <%=  @Sum_timer = Hour.sum(:number, :conditions => ['user_id = ?', '2']) %><br/>
+Total antal timer MKS: <%=  @Sum_timer = Hour.sum(:number, :conditions => ['user_id = ?', '3']) %>
+
+
+</div>

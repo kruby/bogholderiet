@@ -1,0 +1,80 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Indhold fra: 
+	<% for type in @types %>
+		<%= h "(" + type.resource_type + ") " %> 
+	<% end %>
+</h1>
+<!-- <%#= link_to '[Ny side]', new_content_path %> Der må ikke oprettes ny content da det skal komme fra Newsarchives, Recipe, Products etc. -->
+
+<table border="0" cellspacing="0" cellpadding="3">
+  <tr>
+	<th>Menu navn</th>
+	<th>Kategori</th>    
+	<th>Pos.</th>
+	<th class='pos'>ID</th>
+	<th>Parent</th>
+	<th>Res_ID</th>
+	<th class='pos'>Akt.</th>
+	<th>Adm.</th>
+	<th>Titel</th>
+	
+	<th>Controller</th>
+    
+    <th>Res. type</th>	
+	
+
+	<th>Handling</th>
+	
+  </tr>
+
+<% for content in @contents %>
+<% ci = content.resource_id %>
+
+<% if content.resource_type == 'Page'; ct = Page; end %>
+<% if content.resource_type == 'Recipe'; ct = Recipe; end %>
+<% if content.resource_type == 'Newsarchive'; ct = Newsarchive; end %>
+<% if content.resource_type == 'Product'; ct = Product; end %>
+<% if content.resource_type == 'Menu'; ct = Menu; end %>
+
+
+
+  <tr>
+    <td width=100px><%=h content.navlabel %></td>
+
+	<td width=65px class='pos'><%= link_to content.category, :action => 'category_content', :id => content.id rescue '-'%><%#=h content.category %></td>
+	<td width=30px class='pos'><%=h content.position %></td>
+	<td width=30px class='pos'><%=h content.id %></td>
+	<td width=40px class='pos'><%=h content.parent_id %></td>
+	<td width=50px class='pos'><%=h content.resource_id %></td>
+	<td width=30px class='pos'>
+		<% 	if content.active
+				@aktiv = '√' 
+			else 
+				@aktiv = '–' 
+			end %>
+	<%=link_to @aktiv, :action => 'active', :id => content.id%><%#= '√' if content.active %></td>
+	
+	<td width=30px class='pos'><% 	if content.admin
+			@aktiv = '√' 
+		else 
+			@aktiv = '–' 
+		end %>
+<%=link_to @aktiv, :action => 'active_admin', :id => content.id%><%#= '√' if content.admin %></td>
+	<td width=150px><%=h truncate(ct.find(ci).title, length = 20, truncate_string = "...") rescue nil -%></td>
+	<td width=100px><%=h content.controller_name %></td>
+    <td width=100px><%=h content.resource_type %></td>	
+	
+	
+	
+    <td width=120px><%= link_to '[Vis]', content %>
+    <%= link_to '[Ret]', edit_content_path(content) %>
+    <%= link_to '[Slet]', content, :confirm => 'Er du sikker?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+</div>

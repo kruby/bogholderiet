@@ -1,0 +1,59 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Alle produkter <%= link_to '[Nyt produkt]', new_product_path %></h1>
+
+<table border="0" cellspacing="0" cellpadding="3">
+  <tr>
+	<th class='pos'>ID</th>    
+	<th>Akt.</th>
+	<th>Navn</th>
+	<th>Titel</th>
+    <th>Overskrift</th>
+	<th>Grafik</th>
+	<th>Image_Class</th>
+	<th>Handling</th>
+    <!-- <th>Description</th>
+        <th>Kind</th>
+        <th>Cost price</th>
+        <th>Sales price</th>
+        <th>Purchase quantity</th>
+        <th>Stock in</th>
+        <th>Stock out</th>
+        <th>Stock</th> -->
+  </tr>
+
+<% for product in @products %>
+  <tr>
+	<td class='pos'><%=h product.id %></td>
+	<% 	if product.active 
+			@aktiv = '√' 
+		else 
+			@aktiv = '–' 
+		end %>
+	    <td class="pos"><%=link_to @aktiv, :action => 'active', :id => product.id%></td>
+	<td width=100px><%=h product.name %></td>
+	<td width=200px><%=h product.title %></td>
+    <td width=200px><%=h product.headline %></td>
+	<td width=100px><%=h product.image %></td>
+	<td width=100px><%=h product.image_class %></td>
+    <!-- <td><%=h product.description %></td>
+        <td><%=h product.kind %></td>
+        <td><%=h product.cost_price %></td>
+        <td><%=h product.sales_price %></td>
+        <td><%=h product.purchase_quantity %></td>
+        <td><%=h product.stock_in %></td>
+        <td><%=h product.stock_out %></td>
+        <td><%=h product.stock %></td> -->
+    <td>
+	<%= link_to '[Vis]', product %>
+    <%= link_to '[Ret]', edit_product_path(product) %>
+    <%= link_to '[Slet]', product, :confirm => 'Er du sikker?', :method => :delete %>
+</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+</div>

@@ -1,0 +1,79 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+<h1>Opret nyt produkt</h1>
+
+<%= error_messages_for :product %>
+
+<% form_for(@product) do |f| %>
+  <p>
+    <label for="name" class = 'ov'>Navn</label><br />
+    <%= f.text_field :name %>
+  </p>
+
+<p>
+    <label for="title" class = 'ov'>Titel</label><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+
+  <p>
+    <label for="headline" class = 'ov'>Overskrift</label><br />
+    <%= f.text_field :headline %>
+  </p>
+
+  <p>
+    <label for="description" class = 'ov'>Beskrivelse</label><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <label for="image" class = 'ov'>Grafik</label><br />
+    <%= f.text_field :image %>
+  </p>
+
+<p>
+    <label for="image_class" class = 'ov'>Image_Class</label><br />
+    <%= f.text_field :image_class %>
+  </p>
+ 
+  <p>
+    <label for="kind" class = 'ov'>Type</label><br />
+    <%= f.text_field :kind %>
+  </p>
+
+  <p>
+    <label for="cost_price" class = 'ov'>Kostpris</label><br />
+    <%= f.text_field :cost_price %>
+  </p>
+
+  <p>
+    <label for="sales_price" class = 'ov'>Salgspris</label><br />
+    <%= f.text_field :sales_price %>
+  </p>
+
+  <p>
+    <label for="purchase_quantity" class = 'ov'>Købsmængde</label><br />
+    <%= f.text_field :purchase_quantity %>
+  </p>
+
+  <p>
+    <label for="stock_in" class = 'ov'>Lager ind</label><br />
+    <%= f.text_field :stock_in %>
+  </p>
+
+  <p>
+    <label for="stock_out" class = 'ov'>Lager ud</label><br />
+    <%= f.text_field :stock_out %>
+  </p>
+
+  <p>
+    <label for="stock" class = 'ov'>På lager</label><br />
+    <%= f.text_field :stock %>
+  </p>
+
+  <p>
+    <%= f.submit "[Opret]", :class => 'button'%>
+	<%= link_to '[Tilbage]', products_path %>
+  </p>
+<% end %>
+</div>
+

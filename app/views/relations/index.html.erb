@@ -1,0 +1,45 @@
+<%= render :partial => "layouts/menu" %>
+
+<% form_tag relations_path, :method => 'get' do %>
+<p>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Søg", :name => nil %>
+	</p>
+<% end %>
+<div id="admin_liste">
+
+<h1>Relationer i Jungle Juice <%= link_to '[Ny relation]', new_relation_path %></h1>
+
+<table>
+  <tr>
+    <th>Firma</th>
+    <!-- <th>Adresse</th>
+        <th>Postnr.</th> -->
+    <th>By</th>
+	<!-- <th>Telefon</th>
+	    <th>Log</th> -->
+    <th>Kategori</th>
+    <th>Ansvar</th>
+	<th>Næste kontakt</th>
+	<th>Handling</th>
+  </tr>
+
+<% for relation in @relations %>
+  <tr>
+    <td><%=h relation.company %></td>
+    <!-- <td><%#=h relation.address %></td>
+        <td><%#=h relation.postno %></td> -->
+    <td><%=h relation.city %></td>
+	<!-- <td><%#=h relation.phone %></td>
+	    <td><%#=h relation.log %></td> -->
+    <td><%=h relation.category %></td>
+    <td><%=h relation.responsible %></td>
+	<!-- <td><%#=h nice_date(relation.action_date) + nice_time(relation.action_time) rescue nil %></td> -->
+	<td><%=h nice_timestamp(relation.next_action)rescue nil %></td>
+	<td width=120px><%= link_to '[Adgang]', edit_relation_path(relation) %><%= link_to '[Slet]', relation, :confirm => 'Er du sikker?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<span class='pagination_info'><%#= page_entries_info @posts %><%= will_paginate @posts %></span>
+</div>

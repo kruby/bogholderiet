@@ -1,0 +1,46 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+
+
+<%= error_messages_for :newsarchive %>
+
+<% form_for(@newsarchive) do |f| %>
+
+<h1>Redigering af nyheder
+    <%= f.submit "[Opdater]", :class => 'button'%>
+	<%= link_to '[Vis]', @newsarchive %>
+	<%= link_to '[Tilbage]', newsarchives_path %>
+</h1>
+  	<p>
+  		<b>Navn</b><br />
+  		<%= f.text_field :name %>
+	</p>
+
+	<p>
+    	<b>Titel</b><br />
+    	<%= f.text_field :title %>
+  	</p>
+
+  <p>
+    <b>Nyhed</b><br />
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <b>Forfatter</b><br />
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <b>Link</b><br />
+    <%= f.text_field :link %>
+  </p>
+
+<p>
+    <b>Active</b><br />
+    <%= f.check_box :active %>
+  </p>
+<% end %>
+
+</div>

@@ -1,0 +1,28 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<p>
+  <b>User:</b>
+  <%=h @hour.user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @hour.description %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @hour.number %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @hour.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_hour_path(@hour) %> |
+<%= link_to 'Back', hours_path %>
+
+</div>

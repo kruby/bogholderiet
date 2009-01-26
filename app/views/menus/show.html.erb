@@ -1,0 +1,25 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+<p>
+  <b>Name:</b>
+  <%=h @menu.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @menu.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @menu.body %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%=h @menu.active %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
+</div>

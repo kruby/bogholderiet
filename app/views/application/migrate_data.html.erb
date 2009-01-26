@@ -1,0 +1,194 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Data fra Menus til migrering</h1>
+
+<table>
+  <tr>
+	<th>Records</th>    
+	
+  </tr>
+
+<tr><td>class AddDataToTables < ActiveRecord::Migration</tr></td>
+<tr><td>def self.up</tr></td>
+<% @counter = 0 %>
+<% for menu in @menus %>
+<% @counter = @counter+1 %>
+<tr><td>
+		Menu.create(
+		:name => '<%=h menu.name%>',
+		:title => '<%=h menu.title%>', 
+		:body => '<%=simple_format(menu.body)%>',
+		:active => '<%=h menu.active%>'
+		)
+		<tr><td>
+		<% c = Content.find_by_resource_id_and_resource_type(menu.id, 'Menu') %>
+		Content.update(<%= @counter %>,
+		{:controller_name => '<%= c.controller_name rescue nil%>', :category => '<%= c.category rescue nil%>', :position => '<%= c.position rescue nil%>', :active => '<%= c.active rescue nil%>'})
+		</td></tr>
+</td></tr>
+	
+<% end %>
+
+<% for page in @pages %>
+<% @counter = @counter+1 %>
+<tr><td>
+		Page.create(
+		:name => '<%=h page.name%>',
+		:title => '<%=h page.title%>', 
+		:body => '<%=simple_format(page.body)%>',
+		:headline => '<%=h page.headline%>',
+		:active => '<%=h page.active%>',
+		:image => '<%=h page.image%>',
+		:image_class => '<%=h page.image_class%>'
+		)
+		<tr><td>
+		<% c = Content.find_by_resource_id_and_resource_type(page.id, 'Page') %>
+		Content.update(<%= @counter %>,
+		{:controller_name => '<%= c.controller_name rescue nil%>', :category => '<%= c.category rescue nil%>', :position => '<%= c.position rescue nil%>', :active => '<%= c.active rescue nil%>'})
+		</td></tr>
+		
+</td></tr>
+<% if page.name == 'Produkter' %>
+<% @produkter = @counter %>
+<% end %>
+
+<% end %>
+
+<% for product in @products %>
+<% @counter = @counter+1 %>
+<tr><td>
+		Product.create(
+		:name => '<%=h product.name%>',
+		:headline => '<%=h product.headline%>',
+		:description => '<%= simple_format(product.description)%>',
+		:kind => '<%=h product.kind%>',
+		:cost_price => '<%=h product.cost_price%>',
+		:sales_price => '<%=h product.sales_price%>',
+		:purchase_quantity => '<%=h product.purchase_quantity%>',
+		:stock_in => '<%=h product.stock_in%>',
+		:stock_out => '<%=h product.stock_out%>',
+		:stock => '<%=h product.stock%>',
+		:created_at => '<%=h product.created_at%>',
+		:updated_at => '<%=h product.updated_at%>',
+		:active => '<%=h product.active%>',
+		:image => '<%=h product.image%>',
+		:title => '<%=h product.title%>',
+		:image_class => '<%=h product.image_class%>'
+		)
+		<tr><td>
+		<% c = Content.find_by_resource_id_and_resource_type(product.id, 'Product') %>
+		<% p = Content.find_by_name('Produkter') %>
+		Content.update(<%= @counter %>,
+		{:controller_name => '<%= c.controller_name rescue nil%>', :category => '<%= c.category rescue nil%>', :position => '<%= c.position rescue nil%>', :parent_id => '<%= @produkter %>', :active => '<%= c.active rescue nil%>'})
+		</td></tr>
+		
+</td></tr>
+
+<% end %>
+
+<% for newsarchive in @newsarchives %>
+<tr><td>
+		Newsarchive.create(
+		:title => '<%=h newsarchive.title%>',
+		:text => '<%=simple_format(newsarchive.text)%>', 
+		:author => '<%=h newsarchive.author%>',
+		:link => '<%=h newsarchive.link%>',
+		:created_at => '<%=h newsarchive.created_at%>',
+		:updated_at => '<%=h newsarchive.updated_at%>',
+		:active => '<%=h newsarchive.active%>',
+		:name => '<%=h newsarchive.name%>',
+		:image => '<%=h newsarchive.image%>'
+		)
+		
+</td></tr>
+
+<% end %>
+
+<% for post in @posts %>
+<tr><td>
+		Post.create(
+		:title => '<%=h post.title%>',
+		:body => '<%= simple_format(post.body)%>', 
+		:author => '<%=h post.author%>',
+		:priority => '<%=h post.priority%>',
+		:created_at => '<%=h post.created_at%>',
+		:updated_at => '<%=h post.updated_at%>',
+		:parent_id => '<%=h post.parent_id%>',
+		:user_id => '<%=h post.user_id%>'
+		)
+</td></tr>
+
+<% end %>
+
+<% for recipe in @recipes %>
+<tr><td>
+		Recipe.create(
+		:name => '<%=h recipe.name%>',
+		:text => '<%= simple_format(recipe.text)%>',
+		:active => '<%=h recipe.active%>', 
+		:type => '<%=h recipe.type%>',
+		:image => '<%=h recipe.image%>',
+		:title => '<%=h recipe.title%>'
+		
+		)
+</td></tr>
+
+<% end %>
+
+<% for relation in @relations %>
+<tr><td>
+		Relation.create(
+		:company => '<%=h relation.company%>',
+		:address => '<%=h relation.address%>', 
+		:postno => '<%=h relation.postno%>',
+		:city => '<%=h relation.city%>',
+		:log => '<%=h relation.log%>',
+		:category => '<%=h relation.category%>',
+		:responsible => '<%=h relation.responsible%>',
+		:phone => '<%=h relation.phone%>'
+		)
+</td></tr>
+
+<% end %>
+
+<% for user in @users %>
+<tr><td>
+		User.create(
+		:login => '<%=h user.login%>',
+		:email => '<%=h user.email%>', 
+		:crypted_password => '<%=h user.crypted_password%>',
+		:salt => '<%=h user.salt%>',
+		:created_at => '<%=h user.created_at%>',
+		:updated_at => '<%=h user.updated_at%>',
+		:admin => '<%=h user.admin%>',
+		:active => '<%=h user.active%>',
+		:category => '<%=h user.category%>',
+		:blogname => '<%=h user.blogname%>'		
+		)
+</td></tr>
+
+<% end %>
+
+
+<tr><td>end</tr></td>
+<tr><td>def self.down</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE menus')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE newsarchives')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE pages')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE posts')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE products')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE recipes')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE relations')</tr></td>
+<tr><td>ActiveRecord::Base.connection.execute('TRUNCATE users')</tr></td>
+
+<tr><td>end</tr></td>
+<tr><td>end</tr></td>
+
+
+
+
+</table>
+
+<br />
+
+</div>

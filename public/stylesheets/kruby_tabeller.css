@@ -1,0 +1,192 @@
+/*STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/
+
+td{
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	vertical-align:top;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	background-color: #eee;
+	padding: 3px;
+}
+
+#admin_liste th{
+	font-size:11px;
+	padding: 4px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #999;
+	font-weight:bold;
+	text-align:left;
+	color:#333333;
+	border-left: 1px solid #999;
+}
+
+#admin_liste {
+z-index:0;
+position:absolute;
+top: 175px;
+left: 150px;
+color:#000000;
+}
+#admin_liste p{
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#CC0000;
+	margin-top:10px;
+}
+#admin_liste h1 {
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	color:#333;
+	margin-left: 0px;
+}
+#admin_liste a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#333;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+#admin_liste .brd1{
+	
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:2px;
+	margin-left:3px;
+}
+.pos, #admin_liste .pos {
+	text-align: center;
+}
+
+#admin_liste .dato{
+	text-align: center;
+	padding: 4px 10px 0px 10px;
+}
+#admin_liste .ov{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	margin-left:3px;
+}
+
+#admin_liste .button{
+	width: auto;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#CC0000;
+	border: none;
+	cursor: pointer;
+	background-color: #eee;
+	padding: 0px;
+}
+#admin_liste input.felter{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:left;
+	color:#333333;
+	display: block;
+}
+
+#admin_liste input.center{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:center;
+	color:#333333;
+	display: block;
+}
+
+#admin_liste input.day_field, #admin_liste input.month_field, #admin_liste input.year_field{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:center;
+	color:#333333;
+}
+
+#admin_liste td {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+
+#admin_liste .pagination_info, #admin_blog .pagination_info {
+font-size:10px;
+line-height:10px;
+font-weight:normal;
+text-align:center;
+margin-left:0px;
+margin-top:0px;
+color:#003300;
+}
+
+#admin_liste .pagination, #admin_blog .pagination {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-top:15px;
+color:black;
+}
+
+#admin_liste .pagination a:link, #admin_blog .pagination a:link {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:hover, #admin_blog .pagination a:hover {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+text-decoration: underline;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:visited, #admin_blog .pagination a:visited {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:active, #admin_blog .pagination a:active {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+
+/*HERTIL STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/

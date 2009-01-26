@@ -1,0 +1,40 @@
+<%= render :partial => "layouts/menu" %>
+<div id="kasse_0">
+<div class="rub2">
+<h1>New newsarchive</h1>
+
+<%= error_messages_for :newsarchive %>
+
+<% form_for(@newsarchive) do |f| %>
+  
+	<p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  	</p>
+
+	<p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Text</b><br />
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <b>Author</b><br />
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <b>Link</b><br />
+    <%= f.text_field :link %>
+  </p>
+
+  <p>
+    <%= f.submit "[Opret]", :class => 'button'%>
+	<%= link_to '[Tilbage]', newsarchives_path %>
+  </p>
+<% end %>
+</div>

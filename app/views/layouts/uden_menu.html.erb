@@ -1,0 +1,30 @@
+<!-- partial der bruges af application.html.erb -->
+<!-- <img class="top_foto" src="images/top.jpg" /> -->
+<div class="top_foto"><%= image_tag "top.jpg" %></div>
+<div id="menu_top">
+	
+	<% if flash[:notice] -%> 
+	<span class="flash_menu"><%= '[' + flash[:notice] + ']' %></span>
+	<%else%>
+	<div class="rub_top">De sundeste sydhavsfrugter er netop kommet i land!</div>
+	<% end -%>
+
+</div>
+<div id="menu_left">
+<ul id='nav'> <!-- Denne id er vigtig, da den ligger i javascriptet -->
+
+<!-- <li class="admin_navlabel">
+	<%# if logged_in? %>
+	<%#= link_to 'Log ud', logout_path %>
+	<%# else %>
+	<%#= link_to 'Log ind', login_path %>
+	<%# end %>
+</li> -->
+
+<li class="admin_navlabel">
+	<% if logged_in? %>
+	<%= link_to 'Log ud', logout_path %>
+	<% end %>
+</li>
+<li id="box_left"></li>
+</ul></div>

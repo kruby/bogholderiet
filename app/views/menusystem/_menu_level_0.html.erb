@@ -1,0 +1,11 @@
+<div id="menu_left">
+
+<%= render :partial => "menusystem/menu_level_1" %>
+
+<li class="admin_navlabel">
+	<% if logged_in? %>
+	<%= link_to 'Log ud', logout_path %>
+	<% end %>
+</li>
+<li id="box_left"></li>
+</ul></div>
