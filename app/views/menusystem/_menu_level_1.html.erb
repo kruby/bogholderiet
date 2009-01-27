@@ -1,4 +1,3 @@
-<ul id='nav'> <!-- Denne id er vigtig, da den ligger i javascriptet -->
 <% @tabs.each do |page| -%> <!-- @tabs kommer fra application.rb -->
 
 	<% if page.admin == true # and Menu.find(page.id).category == current_user.category %>

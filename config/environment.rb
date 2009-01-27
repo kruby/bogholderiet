@@ -72,8 +72,8 @@ end
 # gem 'named_scope'
 #   require 'has_finder'
 #   
-  # gem 'RedCloth'
-  #    require 'RedCloth'
+  gem 'RedCloth'
+       require 'RedCloth'
   
   WillPaginate::ViewHelpers.pagination_options[:prev_label] = '<<'
   WillPaginate::ViewHelpers.pagination_options[:next_label] = '>>'
