@@ -55,7 +55,6 @@ ActionController::Routing::Routes.draw do |map|
   
   
   
-  
   # map.view_fruit ':fruit', :controller => 'fruit', :action => 'show'
   
   
@@ -88,7 +87,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   #map.root :controller => "page", :name => 'forside', :action => 'show'
-  map.root :controller => "viewer", :name => 'forside', :action => 'show'
+  map.root :controller => "viewer", :name => 'forside', :action => 'forside'
   #map.root :controller => "pages", :id => 15
   # See how all your routes lay out with "rake routes"
   map.connect '', :controller => 'viewer', :name => 'forside', :action => 'show'

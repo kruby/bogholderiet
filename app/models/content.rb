@@ -1,6 +1,11 @@
 class Content < ActiveRecord::Base
+  
+
+  
   acts_as_tree :order => "position"
   
+
+
   
   #named_scope :parent_pages, :conditions => ["parent_id IS NULL and active", true], :order => 'position'
   
@@ -14,6 +19,11 @@ class Content < ActiveRecord::Base
   named_scope :public_pages, :conditions => ["(parent_id IS NULL and active and admin != ?) or (parent_id IS NULL and active and admin IS NULL)", true], :order => 'position'
   #public_pages finder alle aktive sider der ikke er admin sider
   
+  named_scope :main_menu, :conditions => ["controller_name = 'pages' and active and admin != ?", true], :order => 'position'
+  
+  named_scope :pages, :conditions => {:controller_name => 'pages'}, :order => 'position'
+  named_scope :not_admin, :conditions => { :admin => false }, :order => 'position'
+  named_scope :active, :conditions => {:active => true }, :order => 'position'
   
   belongs_to :resource, :polymorphic => true
   # resource ovenfor er bare et navn. Det kunne have været hvadsomhelst, men i tabellen contents hedder de 2 vigtigste feltnavne så: resource_id og resource_type

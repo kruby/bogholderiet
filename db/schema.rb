@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 10) do
+ActiveRecord::Schema.define(:version => 20090126092410) do
 
   create_table "contents", :force => true do |t|
     t.string   "name"
@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(:version => 10) do
     t.boolean  "admin"
     t.integer  "position"
     t.string   "controller_name"
-    t.string   "category",        :default => "Admin"
+    t.string   "category",            :default => "Admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "controller_redirect"
+    t.string   "action_redirect"
+    t.boolean  "redirect"
   end
 
   create_table "hours", :force => true do |t|
@@ -84,8 +87,8 @@ ActiveRecord::Schema.define(:version => 10) do
     t.string   "headline"
     t.text     "description"
     t.string   "kind"
-    t.integer  "cost_price",        :limit => 10
-    t.integer  "sales_price",       :limit => 10
+    t.integer  "cost_price"
+    t.integer  "sales_price"
     t.integer  "purchase_quantity"
     t.integer  "stock_in"
     t.integer  "stock_out"

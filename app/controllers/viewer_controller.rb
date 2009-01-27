@@ -3,23 +3,24 @@ class ViewerController < ApplicationController
   
   def show
     
+           @page = Page.find(params[:id])
+           
+           @pagetitle = @page.title rescue 'Indhold følger snarest'
+           @content = @page.body rescue 'Indhold følger snarest'
+           @headline = @page.headline rescue 'Indhold følger snarest'
+                        
+  end
+  
+  
+  def forside
+    
            @page = Page.find_by_name(params[:name])
            
            @pagetitle = @page.title rescue 'Indhold følger snarest'
            @content = @page.body rescue 'Indhold følger snarest'
            @headline = @page.headline rescue 'Indhold følger snarest'
              
-             if @page.image.length > 0 
-               @image = @page.image
-             else
-               @image = 'forside.gif'
-             end
-             
-             if @page.image_class.length > 0
-               @image_class = @page.image_class
-             else
-               @image_class = 'foto_lille'
-             end
+    render :action => "show" 
                         
   end
   

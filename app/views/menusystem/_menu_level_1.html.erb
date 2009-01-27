@@ -1,7 +1,7 @@
 <ul id='nav'> <!-- Denne id er vigtig, da den ligger i javascriptet -->
 <% @tabs.each do |page| -%> <!-- @tabs kommer fra application.rb -->
 
-	<% if page.admin == TRUE # and Menu.find(page.id).category == current_user.category %>
+	<% if page.admin == true # and Menu.find(page.id).category == current_user.category %>
 		<li class="admin_navlabel">
 		<%= link_to page.navlabel, {:controller => page.controller_name, :action => 'index'} %> <!-- Alle admin sider ledes videre til deres index i views -->
 		<% @c = page.children %>

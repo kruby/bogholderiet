@@ -44,29 +44,6 @@ table {
 	background-color: #999;*/
 }
 
-#wrapper {
-	position: relative; 
-	text-align: left; 
-	width: 570px;
-	margin-top: 10px; 
-	margin-right: auto; 
-	margin-left: auto; 
-	border-bottom: 1px solid #ececec;
-	z-index: 1000;
-	font-size:16px;
-	font-weight:bold;
-	
-}
-
-/*#wrapper_top_text {
-	position: relative; 
-	text-align: left; 
-	width: 601px; 
-	margin-right: auto; 
-	margin-left: auto; 
-	z-index: 1000;
-	
-}*/
 
 #wrapper_top_text {
 	margin-right: auto; 
@@ -77,4 +54,100 @@ table {
 	background-repeat: no-repeat;
 	background-position: center;
 	
+}
+
+#menu_streg{
+	position: relative;
+	top: 35px;
+	margin-right: auto; 
+	margin-left: auto;
+	text-align: center; 
+	border: 1px so;
+	height: 1px;
+	width: 600px;
+	background-color: #ccc;
+	z-index: 1500;
+}
+
+#wrapper {
+	position: relative; 
+	text-align: left; 
+	width: 570px;
+	margin-top: 0px; 
+	margin-right: auto; 
+	margin-left: auto; 
+	border-bottom: 1px solid #ececec;
+	z-index: 1000;
+	font-size:16px;
+	font-weight:bold;
+	
+}
+
+
+/* menu top */
+#menu {
+position:relative;
+margin-bottom: 0;
+margin-top: 0;
+margin-right: auto; 
+margin-left: auto;
+border-bottom: 1px solid #00AAD8;
+font-family: helvetica, arial, verdana, sans-serif;	
+text-align: center;
+letter-spacing: 3px;
+font-weight: normal;
+font-size:10px;
+top: 0px;
+left: 0px;
+width: 600px;
+z-index:210;
+}
+
+#menu ul {
+margin: auto;
+padding: 5px 0 5px 0;
+list-style:none;
+position: relative;
+left: 0px;
+}
+#menu ul li {
+display: inline;
+color: #000;
+}
+#menu ul li.streg a {
+margin: 0;
+padding-left: 5px;
+padding-right: 10px;
+text-decoration:none;
+vertical-align: top; /*Virker godt for Firefox.*/
+border-right: 1px solid #00AAD8;
+color: #000;
+}
+#menu ul li.uden_streg a{
+margin: 0px;
+padding-left: 5px;
+padding-right: 5px;
+text-decoration:none;
+vertical-align: top; /*Virker godt for Firefox.*/
+border: none;
+color: #000;
+}
+#menu ul li a:hover {
+color: #5aa1cf;
+text-decoration:none;
+/*vertical-align: middle;*/ 
+}
+#menu ul li a:active{
+color: #333;
+text-decoration:none;
+}
+#menu ul .lodret {
+margin: 0px;
+padding-top: 0px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+position: relative;
+top: -10px;
+left: 0px;
 }

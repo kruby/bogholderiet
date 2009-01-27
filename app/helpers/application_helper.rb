@@ -34,6 +34,14 @@ module ApplicationHelper
     else 
     	return '–' 
     end
-  end  
+  end
+  
+  def active_test(active)
+    if active == true
+  			@aktiv = '√' 
+  	else 
+  			@aktiv = '–' 
+  	end
+  end
    
 end

@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
       @tabs = Content.public_pages # public_pages kommer fra content.rb (modellen)
     end
     
+    @main_menu = Content.pages.active.not_admin # main_menu kommer fra content.rb
     
     
     @mangler = 'Indhold følger snarest'
@@ -44,7 +45,7 @@ class ApplicationController < ActionController::Base
    active_controller = params[:controller].classify.constantize
    @active_controller = active_controller.find(params[:id])
    if @active_controller.active
-     @active_controller.active = nil
+     @active_controller.active = 0
      #flash[:notice] = 'Jobbet blev til nul'
    else
      @active_controller.active = 1
@@ -60,10 +61,26 @@ class ApplicationController < ActionController::Base
    active_controller = params[:controller].classify.constantize
    @active_controller = active_controller.find(params[:id])
    if @active_controller.admin
-     @active_controller.admin = nil
+     @active_controller.admin = 0
      #flash[:notice] = 'Jobbet blev til nul'
    else
      @active_controller.admin = 1
+   #flash[:notice] = 'Jobbet blev til 1'
+   end
+   
+   @active_controller.update_attributes(params[:active_controller])
+   
+   redirect_to(:action => 'index')
+  end
+  
+  def active_redirect
+   active_controller = params[:controller].classify.constantize
+   @active_controller = active_controller.find(params[:id])
+   if @active_controller.redirect
+     @active_controller.redirect = 0
+     #flash[:notice] = 'Jobbet blev til nul'
+   else
+     @active_controller.redirect = 1
    #flash[:notice] = 'Jobbet blev til 1'
    end
    
@@ -81,7 +98,7 @@ class ApplicationController < ActionController::Base
          #redirect_to(:controller => 'users', :action => 'index')
          flash[:notice] = 'Kan ikke ændres. Altid mindst én admin tilgængelig'
        else
-         @active_controller.admin = nil
+         @active_controller.admin = 0
        end
        #flash[:notice] = 'Jobbet blev til nul'
      else

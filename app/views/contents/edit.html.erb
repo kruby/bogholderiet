@@ -36,8 +36,8 @@
   </p>
 
 <p>
-    <b>Active/Admin</b><br />
-    <%= f.check_box :active %><%= f.check_box :admin %>
+    <b>Active/Admin/Redirect</b><br />
+    <%= f.check_box :active %><%= f.check_box :admin %><%=f.check_box :redirect %>
   </p>
 
   <p>
@@ -50,6 +50,15 @@
   <%=h @content.resource_type %>
 </p>
 
+<p>
+    <b>Ctrl.-redirect</b><br />
+    <%= f.text_field :controller_redirect %>
+</p>
+
+<p>
+    <b>Action-redirect</b><br />
+    <%= f.text_field :action_redirect %>
+</p>
 
 <% end %>
 
