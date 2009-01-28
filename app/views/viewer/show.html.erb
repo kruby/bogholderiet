@@ -3,21 +3,55 @@
 
 
 
-<div id='wrapper_top_text'><%= image_tag "top_text.jpg" %></div>
-<!-- <div id="menu_streg"></div> -->
-<div id="menu"><%= render :partial => "layouts/menu_forside" %></div>	
+<div id='wrapper_top_text'><%#= image_tag "top_text.jpg" %></div>
 
-<div id='wrapper'>
+<div id="menu"><%= render :partial => "layouts/menu_forside" %></div>
 
-
+<div id='forside_wrapper'>
 
 
 
 
-<h1 id=""><%= render :partial => "layouts/show" %>
-</h1>
+
+
+
+<%= render :partial => "layouts/show" %>
+
+
+
+
+
+
+
+
+
 
 </div>
+
+<!-- <div id="forside_wrapper_streg"></div> -->
+
+
+
+<div id='forside_blog_wrapper'>
+
+<h1 class="blog_headline">Seneste indlæg fra bloggen</h1>
+
+<%= render :partial => "layouts/posts/forside_blog" %>	
+
+</div>
+
+<!-- <div id="kontakt_tekst"> Kruby ApS - Bredhøjsvinget 9 - 8600 Silkeborg - Tlf. +45 40 19 68 81 </div>  -->
+
+<div id="forside_foto">
+<div id="kontakt_tekst">
+Kruby ApS<br/>
+8600 Silkeborg<br/>
+Tlf. +45 40 19 68 81</div>
+	
+	
+	
+	<%#= image_tag "ballon.jpg" %></div>	
+
 
 
 

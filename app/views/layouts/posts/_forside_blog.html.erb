@@ -1,0 +1,23 @@
+<% for post in @posts %>
+<div class="wrapper">
+		
+<div class="blogpost">
+	
+	<div class="topline">
+	<span class="title">
+	<%#=h post.id %><%= post.title %><%#=h truncate(post.title, length = 35, truncate_string = "...") %></span>
+	</div> <!-- topline -->
+	<div class="date_time">
+	<span class="author"><%=h User.find(post.user_id).blogname %> - </span><%=h post.created_at.strftime("%d.%m.%y - %H:%M") %></div>
+	
+	
+	
+	
+	<div class="body"><%= textilize(post.body) %></div>
+	<div class="bottomline"></div>
+	
+	</div> <!-- blogpost -->
+	
+</div> <!-- wrapper -->
+	
+<% end %>

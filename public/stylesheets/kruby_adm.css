@@ -791,12 +791,12 @@ color:white;
 	}
 
 
-#menu_left ul li {
+ul li {
 	position: relative;
 	z-index:200;
 	}
 	
-#menu_left li ul {
+li ul {
 	position: absolute;
 	left: 110px; /* Set 1px less than menu width */
 	top: 0;
@@ -805,7 +805,7 @@ color:white;
 	}
 
 /* Styles for Menu Items */
-#menu_left ul li a {
+ul li a {
 	display: block;
 	text-decoration: none;
 	color: #333;
@@ -814,7 +814,7 @@ color:white;
 	border-bottom: 1px solid #69c;
 	z-index:200;
 	}
-#menu_left ul li.admin_navlabel a {
+ul li.admin_navlabel a {
 	display: block;
 	text-decoration: none;
 	color: #69c;
@@ -824,7 +824,7 @@ color:white;
 	z-index:200;
 	}
 
-#menu_left ul li.admin_navlabel ul li a {
+ul li.admin_navlabel ul li a {
 	display: block;
 	text-decoration: none;
 	color: #69c;
@@ -834,7 +834,7 @@ color:white;
 	z-index:200;
 	}	
 	
-#menu_left ul li.admin_navlabel a:hover {
+ul li.admin_navlabel a:hover {
 	display: block;
 	text-decoration: none;
 	color: #69C;
@@ -849,14 +849,14 @@ color:white;
 * html ul li a { height: 1%; z-index:200;}
 /* End */
 
-#menu_left ul li a:hover { 
+ul li a:hover { 
 color: #69C; 
 background: #CCC; 
 z-index:200;
 border-bottom: 1px solid #69c;
 	} /* Hover Styles */
 		
-#menu_left li ul li a { 
+li ul li a { 
 padding: 5px 10px; 
 z-index:200;
 font-weight:normal;
@@ -866,7 +866,7 @@ background:#FFE05E;
 	}
  /* Sub Menu Styles */
 		
-#menu_left li:hover ul, li.over ul { 
+li:hover ul, li.over ul { 
 display: block;
 z-index:200;
 	} /* The magic */

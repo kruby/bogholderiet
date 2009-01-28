@@ -16,11 +16,11 @@ body {
 
 
 h1 {
-	font-size:14px;
+	font-size: 20px;
 	font-weight: bold;
 	text-align:left;
 	line-height: 22px;
-	color:#69C;
+	color:#476D91;
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
@@ -30,8 +30,9 @@ p {
 	font-weight: normal;
 	text-align:left;
 	line-height: 18px;
-	color:#69C;
+	color:#476D91;
 	margin-top: 0px;
+	margin-left: 2px;
 }
 
 table {
@@ -45,10 +46,27 @@ table {
 }
 
 
+#kontakt_tekst {
+position:relative;
+top: 10px;
+margin-right: 20px; 
+margin-left: auto;
+text-transform: uppercase;
+font-family: helvetica, arial, verdana, sans-serif;
+color: white;
+text-align: right;
+letter-spacing: 3px;
+font-weight: bold;
+font-size:10px;
+z-index:210;
+}
+
 #wrapper_top_text {
 	margin-right: auto; 
 	margin-left: auto;
-	text-align: center; 
+	text-align: center;
+	width: 600px;
+	height: 125px;
 	border:none;
 	background-image: url(../images/top_text.jpg);
 	background-repeat: no-repeat;
@@ -56,33 +74,42 @@ table {
 	
 }
 
-#menu_streg{
-	position: relative;
-	top: 35px;
-	margin-right: auto; 
-	margin-left: auto;
-	text-align: center; 
-	border: 1px so;
-	height: 1px;
-	width: 600px;
-	background-color: #ccc;
-	z-index: 1500;
-}
-
-#wrapper {
+#forside_wrapper, #forside_blog_wrapper {
 	position: relative; 
 	text-align: left; 
 	width: 570px;
 	margin-top: 0px; 
 	margin-right: auto; 
 	margin-left: auto; 
-	border-bottom: 1px solid #ececec;
+	/*border-bottom: 1px solid #ececec;*/
 	z-index: 1000;
 	font-size:16px;
-	font-weight:bold;
-	
+	font-weight:bold;	
 }
 
+#forside_wrapper_streg {
+	position: relative;  
+	width: 600px;
+	margin-top: 20px;
+	margin-bottom: 20px; 
+	margin-right: auto; 
+	margin-left: auto;
+	border-bottom: 1px solid #00AAD8;
+	z-index: 1000;
+}
+
+#forside_foto {
+	margin-right: auto; 
+	margin-left: auto;
+	text-align: center; 
+	border:none;
+	width: 600px;
+	height: 60px;
+	background-image: url(../images/ballon.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 3000;	
+}
 
 /* menu top */
 #menu {

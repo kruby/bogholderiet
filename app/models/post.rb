@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
     
   acts_as_tree :order => 'created_at DESC'
   
+  named_scope :forside_blogs, :order => 'created_at DESC'
+  
+  named_scope :admin_pages, :conditions => ["parent_id IS NULL and active", true], :order => 'position'
+  
   
   def self.search(search, page)
     paginate  :per_page => 5, :page => page,
