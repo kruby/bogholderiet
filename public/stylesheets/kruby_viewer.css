@@ -2,6 +2,9 @@
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
+br {
+	margin-bottom: 7px;
+}
 body {
 	margin-top: 0px;
 	margin-right: auto; 
@@ -29,7 +32,7 @@ p {
 	font-size:12px;
 	font-weight: normal;
 	text-align:left;
-	line-height: 18px;
+	line-height: 15px;
 	color:#476D91;
 	margin-top: 0px;
 	margin-left: 2px;
@@ -43,6 +46,16 @@ table {
 	/*border-top: 1px solid #999;
 	border-right: 1px solid #999;
 	background-color: #999;*/
+}
+
+#forside_wrapper p {
+	font-size:11px;
+	font-weight: normal;
+	text-align:left;
+	line-height: 14px;
+	color:#476D91;
+	margin-top: 0px;
+	margin-left: 2px;
 }
 
 
@@ -101,6 +114,7 @@ z-index:210;
 #forside_foto {
 	margin-right: auto; 
 	margin-left: auto;
+	margin-top: 25px;
 	text-align: center; 
 	border:none;
 	width: 600px;

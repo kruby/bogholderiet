@@ -1,5 +1,5 @@
 <% for post in @posts %>
-<div class="wrapper">
+<div class="forside_blog_wrapper">
 		
 <div class="blogpost">
 	
@@ -7,8 +7,7 @@
 	<span class="title">
 	<%#=h post.id %><%= post.title %><%#=h truncate(post.title, length = 35, truncate_string = "...") %></span>
 	</div> <!-- topline -->
-	<div class="date_time">
-	<span class="author"><%=h User.find(post.user_id).blogname %> - </span><%=h post.created_at.strftime("%d.%m.%y - %H:%M") %></div>
+	<div class="date_time"><%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> - <span class="author"><%=h User.find(post.user_id).blogname %></span></div>
 	
 	
 	
