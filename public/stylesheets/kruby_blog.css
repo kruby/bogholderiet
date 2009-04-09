@@ -14,7 +14,7 @@ color:#000000;
 	font-size:12px;
 	padding: 6px;
 	background-color: #FFFFFF;
-	border: 1px solid #BAD6E9;
+	border: 1px solid #00AAD8;
 	/*border-left: 1px solid #fff;*/
 	font-weight:bold;
 	color:#333333;
@@ -67,8 +67,8 @@ color:#000000;
 	font-size:11px;
 	font-weight:normal;
 	text-align:left;
-	border: 1px solid #BAD6E9;
-	border-left: 1px solid #BAD6E9;
+	border: 1px solid #00AAD8;
+	/*border-left: 1px solid #BAD6E9;*/
 	/*background-color: #eee;*/
 	padding: 4px 8px 4px 8px;
 	/*border-width: 1px;*/
@@ -86,7 +86,7 @@ color:#000000;
 
 
 #mini_blog .even #r1, #mini_blog .even #r2, #mini_blog .even #r3, #mini_blog .even #r4, #mini_blog .even #r5 {
-	border-right: 1px solid #fff;
+	border-right: 1px solid #00AAD8;
 }
 
 /*#admin_blog {

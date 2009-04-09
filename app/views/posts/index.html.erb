@@ -8,7 +8,8 @@
 	<th class='pos'>ID</th>
 	<th class='pos'><< ID</th>
 	<th class='pos'>User ID</th>
-    <th>Titel</th>
+    <th>Aktiv</th>
+	<th>Titel</th>
     <th>Indhold</th>
     <th>Forfat.</th>
     <!-- <th>Prio.</th> -->
@@ -20,6 +21,7 @@
 	<td class='pos'><%=h post.id %></td>
 	<td class='pos'><%=h post.parent_id rescue nil %></td>
 	<td class="pos"><%=h post.user_id rescue nil%></td>
+	<td class='pos'><%=link_to active_test(post.active), :action => 'active', :id => post.id%></td>
     <td><%=h post.title %></td>
     <td><%=h truncate(post.body, length = 60, truncate_string = "...") %></td>
     <td class="pos"><%=h User.find(post.user_id).blogname %></td>

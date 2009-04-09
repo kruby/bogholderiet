@@ -1,6 +1,6 @@
 /*STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/
 
-td{
+#admin_liste td{
 	font-size:11px;
 	font-weight:normal;
 	text-align:left;
@@ -9,20 +9,21 @@ td{
 	vertical-align:top;
 	border-bottom: 1px solid #999;
 	border-left: 1px solid #999;
-	background-color: #eee;
+	background-color: #fff;
 	padding: 3px;
 }
 
 #admin_liste th{
 	font-size:11px;
 	padding: 4px;
-	background-color: #FFFFFF;
+	background-color: #fff;
 	border-bottom: 1px solid #999;
 	font-weight:bold;
 	text-align:left;
 	color:#333333;
 	border-left: 1px solid #999;
 }
+
 
 #admin_liste {
 z-index:0;
