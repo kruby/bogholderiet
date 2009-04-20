@@ -9,7 +9,7 @@ class ViewerController < ApplicationController
            @content = @page.body rescue 'Indhold følger snarest'
            @headline = @page.headline rescue 'Indhold følger snarest'
            
-           @posts = Post.forside_blogs.all(:limit => 3)
+           @posts = Post.forside_blogs_active.all(:limit => 3)
                         
   end
   
