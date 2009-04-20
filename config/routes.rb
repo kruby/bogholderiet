@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :viewer
   
   map.resources :posts
+  
   map.bloggen '/bloggen', :controller => 'posts', :action => 'list'
   map.miniblog '/miniblog', :controller => 'posts', :action => 'mini_blog'
   map.sorter_dato '/sorter_dato', :controller => 'posts', :action => 'sorter_dato'
