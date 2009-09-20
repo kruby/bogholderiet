@@ -24,7 +24,7 @@ h1 {
 	font-weight: bold;
 	text-align:left;
 	line-height: 22px;
-	color:#476D91;
+	color:#165792;
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
@@ -34,7 +34,7 @@ p {
 	font-weight: normal;
 	text-align:left;
 	line-height: 15px;
-	color:#476D91;
+	color:#165792;
 	margin-top: 0px;
 	margin-left: 2px;
 }
@@ -49,14 +49,24 @@ table {
 	background-color: #999;*/
 }
 
+#forside_wrapper {
+	border-bottom: 2px solid #00AAD8;
+	padding-bottom: 5px;
+}
+
+#forside_wrapper h1 {
+	padding-left: 5px;
+}
+
 #forside_wrapper p {
 	font-size:12px;
 	font-weight: normal;
 	text-align:left;
 	line-height: 16px;
-	color:#476D91;
+	color:#555;
 	margin-top: 0px;
 	margin-left: 2px;
+	padding-left: 5px;
 }
 
 

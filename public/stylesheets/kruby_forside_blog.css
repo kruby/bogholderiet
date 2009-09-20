@@ -1,5 +1,16 @@
 /* FORSIDE BLOGPOSTS */
 
+#forside_blog_border {
+/*border: 1px solid #999;*/
+}
+
+#forside_blog_wrapper .blogpost{
+padding: 10px;
+border: 1px solid #999;
+margin-bottom: 5px;
+}
+
+
 #forside_blog_wrapper .topline {
 	width: auto;
 	font-size:8px;
@@ -29,7 +40,7 @@
 	padding: 0px 0px 3px 0px; /*TRBL*/
 }
 #forside_blog_wrapper .title, #admin_blog .emne {
-	color:#999;
+	color:#555;
 	margin-top:5px;
 	margin-left: 2px;
 	font-size: 14px;
@@ -43,7 +54,7 @@
 	font-size:11px;
 	font-weight:normal;
 	text-align:left;
-	color:#000;
+	color:#555;
 	margin: 0px 5px 5px 2px; /*TRBL*/
 	
 }
@@ -75,8 +86,8 @@
 	font-size:16px;
 	font-weight:bold;
 	text-align:left;
-	color:#476D91;
-	margin-left: 0px;
+	color:#165792;
+	margin-left: 5px;
 	margin-bottom: 10px;
 }
 #forside_blog_wrapper h1 a{	
