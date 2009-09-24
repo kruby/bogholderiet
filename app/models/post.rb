@@ -1,5 +1,9 @@
 class Post < ActiveRecord::Base
   
+  has_attached_file   :photo, :styles => { :small => "100x100>", :medium => "200x200>", :large => "300x300>", :thumb => "20x20>" },
+                      :url => "/uploads/posts/:id/:style/:basename.:extension",
+                      :path => ":rails_root/public/uploads/posts/:id/:style/:basename.:extension"
+  
   has_many :subpages, :class_name => 'Post', :foreign_key => 'parent_id', :dependent => :destroy
   #  belongs_to :parent, :class_name => 'Post', :foreign_key => 'parent_id'
     

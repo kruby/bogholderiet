@@ -5,9 +5,9 @@
 }
 
 #forside_blog_wrapper .blogpost{
-padding: 10px;
-border: 1px solid #999;
-margin-bottom: 5px;
+	padding: 10px;
+	border: 1px solid #999;
+	margin-bottom: 5px;
 }
 
 
@@ -27,6 +27,21 @@ margin-bottom: 5px;
 	margin-left: 0px;
 	font-style: italic;
 	font-weight:bold;
+}
+
+#forside_blog_wrapper table {
+	border: 1px solid #999;
+}
+
+#forside_blog_wrapper td.tekst_foto_1 {
+	padding: 10px;
+}
+
+#forside_blog_wrapper td.foto_1 {
+	width: 100px;
+	text-align: center;
+	vertical-align: top;
+	
 }
 
 #forside_blog_wrapper .date_time {

@@ -12,6 +12,7 @@
 	<th>Titel</th>
     <th>Indhold</th>
     <th>Forfat.</th>
+	<th>Foto</th>
     <!-- <th>Prio.</th> -->
 	<th>Handling</th>
   </tr>
@@ -25,6 +26,7 @@
     <td><%=h post.title %></td>
     <td><%=h truncate(post.body, length = 60, truncate_string = "...") %></td>
     <td class="pos"><%=h User.find(post.user_id).blogname %></td>
+	<td class='pos'><%= image_tag post.photo.url(:thumb) rescue nil %></td>
     <!-- <td class="pos"><%=h post.priority %></td> -->
     <!-- <td><%#= link_to 'Vis', post %></td> -->
     <td><%= link_to '[Ret]', edit_post_path(post) %><%= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %></td>

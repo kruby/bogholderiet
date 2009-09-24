@@ -12,7 +12,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 # Nedenstående er nødvendigt for at for named_scope til at virke
 
-
 Rails::Initializer.run do |config|
   
   # Bruges vedr. DateTime Toolbocks
@@ -81,5 +80,22 @@ end
   # silence_warnings do
   #          require "#{File.expand_path(RAILS_ROOT)}/vendor/RedCloth-3.0.3/lib/redcloth.rb"
   #      end
+
+
+  #Paperclip.options[:command_path] = '/Users/thomas/ImageMagick-6.5.5/bin'
+  #Paperclip.options[:image_magick_path] = '/Users/thomas/ImageMagick-6.5.5/bin'
   
+  # if RAILS_ENV == "development"
+  #  Paperclip.options[:command_path] = '/Users/thomas/ImageMagick-6.5.5/bin'
+  #  Paperclip.options[:magick_home] = '/Users/thomas/ImageMagick-6.5.5'
+  # 
+  #   if Paperclip.options[:magick_home]
+  #     ENV['MAGICK_HOME'] = Paperclip.options[:magick_home]
+  #     ENV['DYLD_LIBRARY_PATH'] = Paperclip.options[:magick_home] + "/lib"
+  #   end
+  # end
   
+
+
+
+

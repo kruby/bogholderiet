@@ -65,7 +65,7 @@ set :deploy_via, :copy
 #
 # The shared area is prepared with 'deploy:setup' and all the shared
 # items are symlinked in when the code is updated.
-# set :global_shared_dirs, %w(public/upload)
+set :global_shared_dirs, %w(public/uploads public/assets)
 # set :global_shared_files, %w(config/database.yml)
 
 # SSL Certificates. If you specify an SSL certificate name then

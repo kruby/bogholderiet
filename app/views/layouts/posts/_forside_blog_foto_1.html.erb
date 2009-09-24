@@ -1,0 +1,18 @@
+<% for post in @posts %>
+
+<table class='tekst_foto_1'>
+  <tr>
+	<td class='tekst_foto_1'><p>Kruby beskæftiger sig med dynamiske hjemmesider, der bliver skræddersyet i tæt samarbejde med kunden, og hvor du selv får mulighed for at rette indholdet.
+	Udgangspunktet er, at de arbejdsrutiner du som kunde har oparbejdet igennem mange år, skal implementeres i din fremtidige internet løsning.
+	Ikke noget med at købe hele pakken for kun at bruge en lille brøkdel af den.
+	Din løsning er tilpasset dine behov.
+	Ændrer du mening undervejs, justeres løsningen ind derefter.
+	Nye arbejdsredskaber gør dette muligt, og dermed bliver dialog det vigtigste redskab i hele processen.
+	Ring til os på +45 40 19 68 81 for at starte dialogen om din fremtidige internet løsning.</p>
+	</td>
+	<td class='foto_1'><%= image_tag post.photo.url(:small), :class => 'foto_1' %><br/><%= image_tag "rails.png", :class => 'foto_1' %></td>
+  </tr>
+</table>
+
+
+<% end %>
