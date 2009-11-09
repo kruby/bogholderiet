@@ -1,12 +1,8 @@
-<div id='wrapper_top_text'><%= image_tag "top_text.jpg" %></div>
-
-<div id="menu"><%= render :partial => "layouts/menu_forside" %></div>
-
-<div id='forside_wrapper'>
-		<div id="admin_blog">
+<%= render :partial => "layouts/menu" %>
 			
-			<%= render :partial => "layouts/posts/new" %>
-		
-		</div>
+<div id="admin_formular">
+	
+<%= render :partial => "posts/partials/new" %>
+
 
 </div>

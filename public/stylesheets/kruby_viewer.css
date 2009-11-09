@@ -13,7 +13,7 @@ body {
 	text-align: center; 
 	background-color:#5aa1cf;
 	border:none;
-	background-image: url(../images/baggrund.jpg);
+/*	background-image: url(../images/baggrund.jpg);*/
 	background-repeat: repeat-y;
 	background-position: center;
 }
@@ -50,8 +50,11 @@ table {
 }
 
 #forside_wrapper {
-	border-bottom: 2px solid #00AAD8;
+/*	border-bottom: 2px solid #00AAD8;*/
 	padding-bottom: 5px;
+	width: 570px;
+	margin-right: auto; 
+	margin-left: auto;
 }
 
 #forside_wrapper h1 {
@@ -69,40 +72,7 @@ table {
 	padding-left: 5px;
 }
 
-
-#kontakt_tekst {
-position:relative;
-top: 10px;
-margin-right: 20px; 
-margin-left: auto;
-text-transform: uppercase;
-font-family: helvetica, arial, verdana, sans-serif;
-color: white;
-text-align: right;
-letter-spacing: 3px;
-font-weight: bold;
-font-size:10px;
-z-index:210;
-}
-
-#wrapper_main {
-	margin-right: auto; 
-	margin-left: auto;
-	text-align: left;
-	width: 600px;
-	height: 3000px;
-	border: none;
-	background-color:#fff;
-}
-
-#wrapper_main #top_foto{
-	position: relative;
-	text-align: left;
-	left: 0px;
-	
-}
-
-#forside_wrapper, #forside_blog_wrapper {
+#forside_blog_wrapper {
 	position: relative;
 	text-align: left; 
 	width: 570px;
@@ -124,6 +94,67 @@ z-index:210;
 	margin-left: auto;
 	border-bottom: 1px solid #00AAD8;
 	z-index: 1000;
+}
+
+
+#kontakt_tekst {
+position:relative;
+top: 10px;
+margin-right: 20px; 
+margin-left: auto;
+text-transform: uppercase;
+font-family: helvetica, arial, verdana, sans-serif;
+color: white;
+text-align: right;
+letter-spacing: 3px;
+font-weight: bold;
+font-size:10px;
+z-index:210;
+}
+
+#wrapper_background {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: auto; 
+		margin-left: auto;
+		height: auto;
+		text-align: center; 
+		background-color:#5aa1cf;
+		border:none;
+		background-image: url(../images/baggrund.jpg);
+		background-repeat: repeat-y;
+		background-position: center;
+}
+
+#bund_baggrund {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: auto; 
+		margin-left: auto;
+		height: auto;
+		text-align: center; 
+		background-color:#5aa1cf;
+		border:none;
+		/*background-image: url(../images/baggrundsbund.jpg);*/
+		background-repeat: none;
+		background-position: center;
+}
+
+#wrapper_main {
+	margin-right: auto; 
+	margin-left: auto;
+	text-align: left;
+	width: 600px;
+	/*height: 3000px;*/
+	border: none;
+	background-color:#fff;
+}
+
+#wrapper_main #top_foto{
+	position: relative;
+	text-align: left;
+	left: 0px;
+	
 }
 
 #forside_foto {

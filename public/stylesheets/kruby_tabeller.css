@@ -1,5 +1,16 @@
 /*STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/
 
+
+#popup_vinduer a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#333;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+
 #admin_liste td{
 	font-size:11px;
 	font-weight:normal;
@@ -26,12 +37,29 @@
 
 
 #admin_liste {
-z-index:0;
-position:absolute;
-top: 175px;
-left: 150px;
+z-index:10000;
+position:relative;
+top: 10px;
+left: 40px;
 color:#000000;
 }
+
+#admin_liste {
+z-index:0;
+position:relative;
+top: 10px;
+left: 40px;
+color:#000000;
+}
+
+#admin_formular #admin_liste {
+z-index:0;
+position:relative;
+top: 5px;
+left: 0px;
+color:#000000;
+}
+
 #admin_liste p{
 	font-size:12px;
 	font-weight:bolder;
@@ -46,6 +74,15 @@ color:#000000;
 	color:#333;
 	margin-left: 0px;
 }
+#admin_liste h2 {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#333;
+	margin-left: 0px;
+	margin-bottom: 8px;
+}
+
 #admin_liste a {
 	font-size:11px;
 	font-weight:normal;
@@ -55,8 +92,41 @@ color:#000000;
 	margin-top:5px;
 	text-decoration:none;
 }
+
+#admin_liste td a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#333;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+
+#admin_liste td.thumb {
+	color:#FFFFFF;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	text-align: center;
+}
+
+#admin_liste td.thumb a  {
+	color:#FFFFFF;
+	position: relative;
+	top: 2px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	text-align: center;
+}
+
+#top_up td, table #tu_centered_content {
+	border: 0px;
+	border-collapse:collapse;
+}
+
 #admin_liste .brd1{
-	
 	font-size:12px;
 	font-weight:normal;
 	text-align:left;
@@ -87,10 +157,10 @@ color:#000000;
 	font-size:11px;
 	font-weight:normal;
 	text-align:center;
-	color:#CC0000;
+	color:#333333;
 	border: none;
 	cursor: pointer;
-	background-color: #eee;
+	background-color: #BAD6E9;
 	padding: 0px;
 }
 #admin_liste input.felter{

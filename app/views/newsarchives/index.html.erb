@@ -26,7 +26,7 @@
 		
 	<td class="pos"><%=link_to @aktiv, :action => 'active', :id => newsarchive.id%></td>
     <td width=150px><%=h newsarchive.title %></td>
-    <td width=200px><%=h truncate(newsarchive.text, length = 30, truncate_string = "...") -%></td>
+    <td width=200px><%=h truncate(newsarchive.text, :length => 30) -%></td>
     <td width=50px><%=h newsarchive.author %></td>
     <td width=100px><%=h newsarchive.link %></td>
 	

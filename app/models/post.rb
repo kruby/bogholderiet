@@ -1,12 +1,13 @@
 class Post < ActiveRecord::Base
   
-  attr_accessor :x1, :y1, :width, :height
+  has_many :attachments, :as => :attachable
   
-  
-  has_attached_file   :photo, :styles => { :small => "100x100>", :medium => "200x200>", :large => "300x300>", :thumb => "20x20>" },
-                      :url => "/uploads/posts/:id/:style/:basename.:extension",
-                      :path => ":rails_root/public/uploads/posts/:id/:style/:basename.:extension"
-  
+  # attr_accessor :x1, :y1, :width, :height
+
+  # has_attached_file   :photo, :styles => { :original => "500x500>", :small => "100x100>", :medium => "200x200>", :large => "300x300>", :thumb => "20x20>" },
+  #                       :url => "/uploads/posts/:id/:style/:basename.:extension",
+  #                       :path => ":rails_root/public/uploads/posts/:id/:style/:basename.:extension"
+  #   
   has_many :subpages, :class_name => 'Post', :foreign_key => 'parent_id', :dependent => :destroy
   #  belongs_to :parent, :class_name => 'Post', :foreign_key => 'parent_id'
     

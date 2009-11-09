@@ -1,13 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :attachments, :collection => { :destroy_from_post => :delete }
+  
+  map.add_to_post '/assets/add_to_post/:id', :controller => 'assets', :action => 'add_to_post'
+  
+  map.resources :assets, :collection => { :edit_multiple => :post, :update_multiple => :put, :add_to_post => :get }
+
   map.resources :hours
 
   map.resources :menus
 
-  
   map.access_denied_admin '/ingen_adgang', :controller => 'users', :action => 'no_access_admin'
-  map.user_access '/bloggen', :controller => 'posts', :action => 'list'
+  map.user_access '/bloggen', :controller => 'posts', :action => 'blog'
   
-  map.resources :posts
+  map.resources :posts, :has_many => :attachments
   
   map.resources :relations
 
@@ -29,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :posts
   
-  map.bloggen '/bloggen', :controller => 'posts', :action => 'list'
+  map.bloggen '/bloggen', :controller => 'posts', :action => 'blog'
   map.miniblog '/miniblog', :controller => 'posts', :action => 'mini_blog'
   map.sorter_dato '/sorter_dato', :controller => 'posts', :action => 'sorter_dato'
   map.sorter_forfatter '/sorter_forfatter', :controller => 'posts', :action => 'sorter_forfatter'
@@ -57,8 +62,6 @@ ActionController::Routing::Routes.draw do |map|
   
   
   # map.view_fruit ':fruit', :controller => 'fruit', :action => 'show'
-  
-  
   
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -92,8 +95,10 @@ ActionController::Routing::Routes.draw do |map|
   #map.root :controller => "pages", :id => 15
   # See how all your routes lay out with "rake routes"
   map.connect '', :controller => 'viewer', :name => 'forside', :action => 'show'
+  
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format' 
+  map.connect ':controller/:action/:id.:format'
+  
 end

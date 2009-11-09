@@ -2,13 +2,13 @@ class PostsController < ApplicationController
   
   before_filter :login_required, :user_required
   
-  layout 'blog'
+  layout 'viewer'
   
   # GET /posts
   # GET /posts.xml
   def index
-    
     @posts = Post.search(params[:search], params[:page])
+    
     #@posts = Post.find(:all)
 
     render :layout => 'application'
@@ -21,14 +21,116 @@ class PostsController < ApplicationController
     
   end
   
+  
+  def show
+    session[:single_blog] = true
+    @post = Post.find(params[:id])
+    if @post.parent_id? == true
+      @post = Post.find(@post.parent_id)
+    end
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @post }
+    end
+  end
+  
+  # def show_single_blog
+  #     session[:single_blog] = true
+  #     @post = Post.find(params[:id])
+  #     render(:action => 'show')
+  # 
+  #     # respond_to do |format|
+  #     #       format.html # show.html.erb
+  #     #       format.xml  { render :xml => @post }
+  #     #     end
+  #   end
+  
+  # GET /posts/new
+  # GET /posts/new.xml
+  def new
+    session[:single_blog] = nil
+    @post = Post.new
+    @assetable = Assetable.find(:all)
+    
+    render :layout => 'application'
+
+    # respond_to do |format|
+    #       format.html # new.html.erb
+    #       format.xml  { render :xml => @post }
+    #     end
+  end
+  
+  def new_asset_line
+    @assetable = Assetable.new
+
+    # respond_to do |format|
+    #       format.html # new.html.erb
+    #       format.xml  { render :xml => @post }
+    #     end
+  end
+
+  # GET /posts/1/edit
+  def edit
+    @post = Post.find(params[:id])
+    @attachments = Attachment.find_all_by_attachable_id(params[:id])
+    
+    render :layout => 'application'
+ 
+  end
+
+  # POST /posts
+  # POST /posts.xml
+  def create
+    @post = Post.new(params[:post])
+
+    respond_to do |format|
+      if @post.save
+        flash[:notice] = 'Indlægget blev oprettet.'
+        #format.html { redirect_to(@post) }
+        # if session[:single_blog] == true
+        #           redirect_to(:action => 'show_single_blog', :id => session[:post_id])
+        #         else
+          format.html { redirect_to(:action => 'index') }
+          #format.html { redirect_to(:action => 'list') }
+          # format.xml  { render :xml => @post, :status => :created, :location => @post }
+        # end
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /posts/1
+  # PUT /posts/1.xml
+  def update
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        flash[:notice] = 'Dit indlæg blev opdateret!'
+          #format.html { redirect_to(:action => 'index') }
+          format.html { redirect_to(edit_post_path(@post)) }
+                              format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  
   # GET /posts
   # GET /posts.xml
   
-  def list
+  def blog
     @posts = Post.search(params[:search], params[:page])
     
     session[:single_blog] = nil
     session[:page] = params[:page]
+    
+    
     
     
     #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
@@ -111,87 +213,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.xml
-  def show
-    session[:single_blog] = true
-    @post = Post.find(params[:id])
-    if @post.parent_id? == true
-      @post = Post.find(@post.parent_id)
-    end
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
   
-  # def show_single_blog
-  #     session[:single_blog] = true
-  #     @post = Post.find(params[:id])
-  #     render(:action => 'show')
-  # 
-  #     # respond_to do |format|
-  #     #       format.html # show.html.erb
-  #     #       format.xml  { render :xml => @post }
-  #     #     end
-  #   end
-  
-  # GET /posts/new
-  # GET /posts/new.xml
-  def new
-    session[:single_blog] = nil
-    @post = Post.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
-
-  # GET /posts/1/edit
-  def edit
-    @post = Post.find(params[:id])
-  end
-
-  # POST /posts
-  # POST /posts.xml
-  def create
-    @post = Post.new(params[:post])
-
-    respond_to do |format|
-      if @post.save
-        flash[:notice] = 'Indlægget blev oprettet.'
-        #format.html { redirect_to(@post) }
-        # if session[:single_blog] == true
-        #           redirect_to(:action => 'show_single_blog', :id => session[:post_id])
-        #         else
-          format.html { redirect_to(@post) }
-          #format.html { redirect_to(:action => 'list') }
-          format.xml  { render :xml => @post, :status => :created, :location => @post }
-        # end
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /posts/1
-  # PUT /posts/1.xml
-  def update
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        flash[:notice] = 'Dit indlæg blev opdateret!'
-          format.html { redirect_to(@post, :id => session[:post_id]) }
-          format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
@@ -237,3 +259,7 @@ class PostsController < ApplicationController
   end
   
 end
+
+
+
+

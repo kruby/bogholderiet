@@ -1,0 +1,36 @@
+<h1>Editing attachment</h1>
+
+<% form_for(@attachment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :attachable_type %><br />
+    <%= f.text_field :attachable_type %>
+  </p>
+  <p>
+    <%= f.label :attachable_id %><br />
+    <%= f.text_field :attachable_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :image_size %><br />
+    <%= f.text_field :image_size %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </p>
+  <p>
+    <%= f.label :asset_id %><br />
+    <%= f.text_field :asset_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @attachment %> |
+<%= link_to 'Back', attachments_path %>

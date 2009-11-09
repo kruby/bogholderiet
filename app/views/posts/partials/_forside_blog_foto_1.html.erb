@@ -1,0 +1,29 @@
+<% for post in @posts %>
+
+
+
+<div class="forside_blog_wrapper">
+		
+<div class="blogpost">
+	
+	<div class="topline">
+	<span class="title">
+	<%#=h post.id %><%= post.title %><%#=h truncate(post.title, :length => 35) %></span>
+	</div> <!-- topline -->
+	<div class="date_time"><%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> - <span class="author"><%=h User.find(post.user_id).blogname %></span></div>
+	
+	
+	
+	
+		<div class="body">
+			<td class='tekst_foto_1'><%= textilize(post.body) %></td>
+			<td class='foto_1'> </td>
+		</div>
+	<div class="bottomline"></div>
+	
+	</div> <!-- blogpost -->
+	
+</div> <!-- wrapper -->
+
+
+<% end %>

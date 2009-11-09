@@ -18,18 +18,18 @@ class ApplicationController < ActionController::Base
     #Menupunkter i forhold til user.category skal hentes. Er man editor, får man kun aktuelle menupunkter at se.
     if logged_in?
       if current_user.category == 'Admin' 
-        @tabs = Content.admin_pages # parent_pages kommer fra content.rb (modellen) derfor starter den også med Content. det har ikke noget med tabellen contents at gøre.
+        @tabs ||= Content.admin_pages # parent_pages kommer fra content.rb (modellen) derfor starter den også med Content. det har ikke noget med tabellen contents at gøre.
       elsif current_user.category == 'Editor'
-        @tabs = Content.editor_pages
+        @tabs ||= Content.editor_pages
       elsif current_user.category == 'User'
-        @tabs = Content.user_pages
+        @tabs ||= Content.user_pages
       end
       
     else
-      @tabs = Content.public_pages # public_pages kommer fra content.rb (modellen)
+      @tabs ||= Content.public_pages # public_pages kommer fra content.rb (modellen)
     end
     
-    @main_menu = Content.pages.active.not_admin # main_menu kommer fra content.rb
+    @main_menu ||= Content.pages.active.not_admin # main_menu kommer fra content.rb
     
     
     @mangler = 'Indhold følger snarest'

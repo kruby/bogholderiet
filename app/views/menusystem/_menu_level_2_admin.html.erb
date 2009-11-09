@@ -13,13 +13,13 @@
 					<% @action_name = 'show' %>
 					<% end %>
 					<% if @action_name == 'forside'%>
-						<li><%= link_to c_menu.navlabel.chars.capitalize, root_url %>
+						<li><%= link_to c_menu.navlabel.mb_chars.capitalize, root_url %>
 
 					<% elsif c_menu.resource_type == 'Menu' %><!-- Alle menuer skal vise id istedet for resource_id for at gøre menuerne brugervenlige -->
-						<li><%= link_to c_menu.navlabel.chars.capitalize, {:controller => @controller_name, :action => @action_name, :id => c_menu.id} %>
+						<li><%= link_to c_menu.navlabel.mb_chars.capitalize, {:controller => @controller_name, :action => @action_name, :id => c_menu.id} %>
 
 					<% else %>
-						<li><%= link_to c_menu.navlabel.chars.capitalize, {:controller => @controller_name, :action => @action_name, :id => c_menu.resource_id} %>
+						<li><%= link_to c_menu.navlabel.mb_chars.capitalize, {:controller => @controller_name, :action => @action_name, :id => c_menu.resource_id} %>
 					<% end %>
 						<!-- Her niveau 3 i menuen.-->
 						<%# @cc = c_menu.children %>

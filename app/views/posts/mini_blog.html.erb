@@ -1,12 +1,28 @@
-<div id='wrapper_top_text'><%= image_tag "top_text.jpg" %></div>
-
-<div id="menu"><%= render :partial => "layouts/menu_forside" %></div>
-
-<div id='forside_wrapper'>
-		<div id="admin_blog">
-			
-			<%= render :partial => "layouts/posts/miniblog" %>
-		
+<div id='wrapper_background'>
+	<div id='wrapper_main'>
+		<div id="top_foto">
+		<%= image_tag "top_text.jpg" %>	
 		</div>
+
+
+		<div id="menu">
+			<%= render :partial => "layouts/menu_forside" %>
+		</div>
+
+		<div id='forside_wrapper'>
+	
+				<div id="admin_blog">
+			
+					<%= render :partial => "posts/partials/miniblog" %>
+		
+				</div>
+
+		</div>
+	
+	</div>
+
+	<div id="bund_baggrund">
+		<%= image_tag "baggrundsbund.jpg" %>
+	</div>
 
 </div>

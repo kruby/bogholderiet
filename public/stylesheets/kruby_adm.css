@@ -7,15 +7,14 @@ background-color:#BAD6E9;
 border:none;
 background-image: url(../images/baggrund_lodret.jpg);
 background-repeat: repeat-x;
-margin: 0 0;
+margin: 0px 0px 0px 0px;
 }
 
 h1 {
-		
-		font-size:16px;
-		font-weight:bold;
-		text-align:left;
-		color:#CC0000;
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
 }
 
 table {
@@ -113,9 +112,10 @@ text-decoration: none;
 #admin_formular {
 z-index:0;
 position:absolute;
-top: 200px;
+top: 187px;
 left: 150px;
 color:#000000;
+margin: 0px;
 }
 #admin_formular p{
 	font-size:12px;
@@ -150,7 +150,8 @@ height:400px;*/
 	font-weight:bold;
 	text-align:left;
 	color:#333;
-	margin-left: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 #admin_formular a{
 	font-size:11px;
@@ -174,14 +175,33 @@ height:400px;*/
 	background-color: #BAD6E9;
 	padding: 0px;
 }
-#admin_formular input, textarea{
+#admin_formular input {
 	font-size:12px;
 	padding: 2px;
 	background-color: #FFFFFF;
 	font-weight:normal;
 	text-align:left;
 	color:#333333;
+	
 }
+
+#admin_formular textarea {
+	font-size:12px;
+	padding: 2px;
+	background-color: #FFFFFF;
+	font-weight:normal;
+	text-align:left;
+	color:#333333;
+	height: 180px;
+	width: 500px;
+
+}
+
+#admin_formular .edit_photo  {
+	border: 2px solid #476D91;
+	margin-top: 3px;
+}
+
 #admin_formular .ov{
 	font-size:12px;
 	font-weight:bolder;
@@ -270,8 +290,6 @@ height:400px;*/
 
 #admin_formular .bruger_kategori{
 width: 240px;
-}
-
 
 }
 
@@ -747,7 +765,8 @@ height: 100px;
 }
 .top_foto
 {
-margin-left:0px;
+margin: 0px 0px 0px 0px;
+height: 125px;
 }
 
 /* Menu top */
