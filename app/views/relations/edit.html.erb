@@ -2,11 +2,16 @@
 <div id="admin_formular">
 	
 <% form_for(@relation) do |f| %>
+<%= f.hidden_field :lock_version %>
 	
 <h1>Redigering af relation
+	<%# previous_next(@relation, 'company') %>
+	<%#= link_to '[<]', :action => 'edit', :id => @the_objects[@key-1].id unless @key == 0%>
+	<%#= link_to '[>]', :action => 'edit', :id => @the_objects[@key+1].id unless @key == @counter-1%>
 	<%= f.submit "[Opdatér]", :class => 'button'%>
 	<%= f.submit "[Opret]", :class => 'button'%>
 	<%= link_to '[Tilbage]', relations_path %>
+	<%#= link_to '[Email info]', :action => 'email_relation_info', :id => @relation.id %>
 	</h1>
 
 <%= error_messages_for :relation %>

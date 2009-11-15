@@ -1,14 +1,16 @@
 <%= render :partial => "layouts/menu" %>
 
+<div id="admin_liste">
 <% form_tag relations_path, :method => 'get' do %>
+<h1>Relationer i Kruby <%= link_to '[Ny relation]', new_relation_path %></h1>
 <p>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag "Søg", :name => nil %>
 	</p>
 <% end %>
-<div id="admin_liste">
 
-<h1>Relationer i Jungle Juice <%= link_to '[Ny relation]', new_relation_path %></h1>
+
+
 
 <table>
   <tr>

@@ -23,7 +23,7 @@
 
 <% for asset in @assets %>
 <% @image =  asset.photo.url(:thumb) %>
-<% @topoptions = "shaded = 0, overlayClose = 1, resizable = 0, title = " + asset.description %>
+<% @topoptions = "shaded = 0, overlayClose = 0, resizable = 0, title = " + asset.description %>
 
   <tr>
 	<td><%= check_box_tag "asset_ids[]", asset.id %></td>

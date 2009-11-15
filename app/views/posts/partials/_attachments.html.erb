@@ -16,7 +16,7 @@
 
   <tr>
     <td class='thumb'>
-	<%= link_to image_tag(@image), Asset.find(attachment.asset_id), :toptions => "shaded = 1, overlayClose = 1, group = 'images'" %>
+	<%= link_to image_tag(@image), Asset.find(attachment.asset_id), :toptions => "shaded = 0, overlayClose = 0,  resizable = 0, group = 'images'" %>
 	</td>
 	<td><%=h attachment.attachable_type %></td>
     <td><%=h Asset.find(attachment.asset_id).description %></td>
