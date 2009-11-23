@@ -27,6 +27,6 @@
 <p><%= submit_tag '[Opret]', :class => 'button' %></p>
 <% end -%>
 
-<div class='fejl_i_bunden'><%#= error_messages_for :user %>	<%= fejl_users.chars.upcase rescue nil %></div>
+<div class='fejl_i_bunden'><%#= error_messages_for :user %>	<%= fejl_users.mb_chars.upcase rescue nil %></div>
 
 </div>

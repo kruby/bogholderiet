@@ -1,5 +1,24 @@
 # Methods added to this helper will be available to all templates in the application.
+# Du kan ikke få adgang til metoder her fra din controller, kun fra dine views
 module ApplicationHelper
+  
+  # def test_web_browser()
+  #   request.env["HTTP_USER_AGENT"].gsub(/[^A-Za-z0-9]/, '')
+  # end
+  
+  # def test_web_browser
+  #    catch(:match) do
+  #      ["Apple", "Firefox/3", "Firefox/2", "MSIE 6", "MSIE 7", "Opera"].each do |ua|
+  #        throw(:match, ua.gsub(/[^a-z0-9]/i, "")) if request.user_agent =~ Regexp.new(ua)
+  #      end
+  #      nil
+  #    end
+  #  end
+     
+ 
+
+  
+  
   def image
       if @image
         if @image_class

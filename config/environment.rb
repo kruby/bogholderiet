@@ -1,5 +1,15 @@
 # Be sure to restart your server when you modify this file
 
+# def test_web_browser
+#   catch(:match) do
+#     ["Apple", "Firefox/3", "Firefox/2", "MSIE 6", "MSIE 7", "Opera"].each do |ua|
+#       throw(:match, ua.gsub(/[^a-z0-9]/i, "")) if request.user_agent =~ Regexp.new(ua)
+#     end
+#     nil
+#   end
+# end
+
+
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'

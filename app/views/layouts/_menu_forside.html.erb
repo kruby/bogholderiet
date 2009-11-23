@@ -16,23 +16,23 @@
 
 	<% if @main_menu[1] == nil %>
 	<li class="uden_streg">
-	<%= link_to menu.navlabel.chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %></li>
+	<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %></li>
 	
 	<%else%>
 
 		<% if @action_name == 'forside'%>
-			<li class="streg"><%= link_to menu.navlabel.chars.upcase, root_url %></li>
+			<li class="streg"><%= link_to menu.navlabel.mb_chars.upcase, root_url %></li>
 		
 		<!-- <%# elsif @action_name == 'apply' %>
-			<li class="streg"><%#= link_to menu.navlabel.chars.upcase, apply_path %></li> -->
+			<li class="streg"><%#= link_to menu.navlabel.mb_chars.upcase, apply_path %></li> -->
 		<% else %>
 			<% unless @last_one == menu.id %>
 			<li class="streg">
-			<%= link_to menu.navlabel.chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
-			<%#= link_to menu.navlabel.chars.upcase, :action => @action_name, :controller => @controller_name, :id => menu.resource_id, :resource_type => menu.resource_type %>
-			<%#= link_to menu.navlabel.chars.upcase, :resource_type => menu.resource_type %>
-			<%#= link_to menu.navlabel.chars.upcase, viewer_path(:id => menu.resource_id, :name => menu.resource_type.downcase) %>
-			<%#= link_to menu.navlabel.chars.upcase, viewer_page_path(:id => menu.resource_id, :name => menu.resource_type.downcase) %>
+			<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
+			<%#= link_to menu.navlabel.mb_chars.upcase, :action => @action_name, :controller => @controller_name, :id => menu.resource_id, :resource_type => menu.resource_type %>
+			<%#= link_to menu.navlabel.mb_chars.upcase, :resource_type => menu.resource_type %>
+			<%#= link_to menu.navlabel.mb_chars.upcase, viewer_path(:id => menu.resource_id, :name => menu.resource_type.downcase) %>
+			<%#= link_to menu.navlabel.mb_chars.upcase, viewer_page_path(:id => menu.resource_id, :name => menu.resource_type.downcase) %>
 			</li>
 			<% end %>
 		<%end %>
@@ -41,7 +41,7 @@
 	
 		<% if @last_one == menu.id%>
 			<li class="uden_streg">
-			<%= link_to menu.navlabel.chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
+			<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
 			</li>
 		
 			<%#= image_tag "lodret_streg.gif", :class => 'lodret'%>

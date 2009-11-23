@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def new
     session[:single_blog] = nil
     @post = Post.new
-    @assetable = Assetable.find(:all)
+    # @assetable = Assetable.find(:all)
     
     render :layout => 'application'
 

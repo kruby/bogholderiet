@@ -2,7 +2,7 @@
 <div id="admin_liste">
 
 
-<h1>Liste over uploadede filer <%= link_to '[Ny upload]', new_asset_path %></h1>
+<h1>Liste over uploadede filer <%= link_to '[Ny upload]', new_asset_path %> <%#= submit_tag "[Tilføj fotos]", :class => 'button'%></h1>
 
 <% form_tag edit_multiple_assets_path do %>
 
@@ -32,13 +32,13 @@
 	<td><%=h nice_date(asset.updated_at) rescue nil %></td>
 	<td><%=h nice_date(asset.photo_updated_at) rescue nil %></td>
 	<!-- <td><%#= link_to image_tag(@image), asset, :class => 'thumb'%></td> -->
-	<td class='thumb'><%= link_to image_tag(@image), asset, :toptions => "shaded = 0, overlayClose = 0,  resizable = 0, group = 'images'" %></td>
+	<td class='thumb'><%= link_to image_tag(@image), asset, :toptions => "shaded = 0, overlayClose = 0,  resizable = 0" %></td>
     <td><%#= link_to 'Show', asset %><%= link_to '[Ret]', edit_asset_path(asset) %><%= link_to '[Slet]', asset, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= submit_tag "[Tilføj fotos]", :class => 'button'%>
+
 <% end %>
 <br />
 

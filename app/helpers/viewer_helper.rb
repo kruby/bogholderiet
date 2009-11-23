@@ -1,4 +1,5 @@
 module ViewerHelper
+  
     def image
       if @image
   	    image_tag @image 

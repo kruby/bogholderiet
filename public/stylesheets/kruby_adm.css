@@ -5,8 +5,8 @@
 body {
 background-color:#BAD6E9;
 border:none;
-background-image: url(../images/baggrund_lodret.jpg);
-background-repeat: repeat-x;
+background-image: url(images/menu_baggrund.gif);
+background-repeat: repeat-y;
 margin: 0px 0px 0px 0px;
 }
 
@@ -767,6 +767,7 @@ height: 100px;
 {
 margin: 0px 0px 0px 0px;
 height: 125px;
+background-color: #fff;
 }
 
 /* Menu top */
@@ -790,25 +791,25 @@ z-index:100;
 
 /* Menu left */
 #box_left {
-width:108px;
-height:5000px;
-color:white;
+/*width:108px;
+height:auto;
+margin-bottom: 900px;
+color:white;*/
 }
 #menu_left ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	width: 110px; /* Width of Menu Items */
-	border-bottom: 1px solid #69c;
+	border-bottom: 0px solid #69c;
+	border-top: 0px solid #69c;
 	z-index:200;
 	background-color: white;
 	color:#FFCC00;
 	font-weight:bold;
 	font-size:11px;
-	border: 0px solid #003300;
-	float:left;
+	float: left;
 	}
-
 
 ul li {
 	position: relative;
@@ -828,7 +829,7 @@ ul li a {
 	display: block;
 	text-decoration: none;
 	color: #333;
-	background:white; /* IE6 Bug */
+/*	background:white; *//* IE6 Bug */
 	padding: 5px;
 	border-bottom: 1px solid #69c;
 	z-index:200;
@@ -847,10 +848,12 @@ ul li.admin_navlabel ul li a {
 	display: block;
 	text-decoration: none;
 	color: #69c;
-	background:white ; /* IE6 Bug */
+	/*background: white;*/ /* IE6 Bug */
 	padding: 5px;
 	border-bottom: 1px solid #69c;
 	z-index:200;
+	background-image: url(images/menu_baggrund_110.gif);
+	background-repeat: repeat-y;
 	}	
 	
 ul li.admin_navlabel a:hover {
