@@ -8,7 +8,12 @@ class CreateRelations < ActiveRecord::Migration
       t.text :log
       t.string :category
       t.string :responsible
-
+      t.text   :phone
+      t.datetime :next_action
+      t.integer :user_id
+      t.string  :type
+      t.integer :search_lock
+      
       t.timestamps
     end
   end

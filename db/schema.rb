@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091110191549) do
+ActiveRecord::Schema.define(:version => 14) do
 
   create_table "assets", :force => true do |t|
     t.string   "description"
@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(:version => 20091110191549) do
     t.integer  "position"
     t.string   "controller_name"
     t.string   "category",            :default => "Admin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "controller_redirect"
     t.string   "action_redirect"
     t.boolean  "redirect"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "hours", :force => true do |t|
@@ -100,9 +100,9 @@ ActiveRecord::Schema.define(:version => 20091110191549) do
     t.integer  "priority",   :default => 1
     t.integer  "parent_id"
     t.integer  "user_id"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active"
   end
 
   create_table "products", :force => true do |t|
@@ -132,14 +132,13 @@ ActiveRecord::Schema.define(:version => 20091110191549) do
     t.text     "log"
     t.string   "category"
     t.string   "responsible"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.text     "phone"
     t.datetime "next_action"
-    t.integer  "lock_version"
     t.integer  "user_id"
     t.string   "type"
     t.integer  "search_lock"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

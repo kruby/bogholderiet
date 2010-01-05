@@ -1,0 +1,272 @@
+* {
+	font-family: Times;
+}
+
+p {
+	font-size: 14px;
+	line-height: 16px;
+	margin: 0px;
+}
+
+br {
+	margin-bottom: 7px;
+}
+
+body {
+	margin: 0px;
+}
+
+.top_logo {
+	margin: 0px;
+	float: left;
+}
+
+.rolig_figur {
+	height: 100px;
+	margin: 5px;
+	float: left;
+}
+
+/*#top_bar_1 * {
+	background-color: #FFFFFF;
+}*/
+
+#top_bar_1 {
+	color: #000;
+	background-color: #FFFFFF;
+	height: auto;
+	width: 100%;
+	border-bottom: 1px solid #999;
+	text-align: center;
+	position: relative;
+	z-index: 100;
+	padding: 10px 0px;
+}
+
+#top_wrapper {
+	text-align: center;
+	margin-right: auto; 
+	margin-left: auto;
+	width: 600px;
+	height: 100px;
+	background-color: #FFFFFF;
+}
+#top_foto_1 {
+	position: relative;
+	height: 100px;
+	width: auto;
+	float: left;
+	margin-left: -40px;
+}
+
+
+#top_foto_1 .logo_tekst {
+	margin-top: -45px;
+	margin-left: 105px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+	z-index: 100000;
+	left: 10px;
+}
+#top_foto_2 {
+	float: left;
+	position: relative;
+	height: 100px;
+	width: auto;
+	margin-left: 15px;
+}
+#top_tekst {
+	font-family: Times;
+	font-size: 12px;
+	text-align: right;
+	line-height: 14px;
+	float: right;
+	position: relative;
+	height: 80px;
+	width: auto;
+	margin: 0px;
+	margin-right: 10px;
+	padding: 16px 0px 0px 0px;
+}
+#top_tekst br {
+	line-height: 5px;
+}
+
+#menu_bar {
+	color: #FFFFFF;
+	background-color: #3D8FCB;
+	height: 25px;
+	width: 100%;
+	border-bottom: 1px solid #999;
+	position: relative;
+	background-image: url(../images/menubar_baggrund_lys.gif);
+}
+#menu_wrapper {
+	text-align: left;
+	margin-right: auto; 
+	margin-left: auto;
+	width: 600px;
+	height: 25px;
+	margin-top: 0px;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+#menu_wrapper ul {
+	padding: 0px;
+	margin: 0px;
+}
+#menu_wrapper ul li {
+	display: inline;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 22px;
+	height: 25px;
+	padding: 10px;
+	border-right: 1px solid #FFF;
+	margin: 0px;
+}
+
+#menu_wrapper ul li.border_left {
+	border-left: 1px solid #FFF;
+}
+
+#menu_wrapper ul li a {
+	text-decoration: none;
+	font-family: inherit;
+	color: inherit;
+	font-size: 11px;
+}
+
+
+#bottom_bar {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	color: #FFFFFF;
+/*	background-color: #3D8FCB;*/
+	height: 100px;
+	width: 100%;
+	border-top: 1px solid #999;
+	background-image: url(../images/bundbar.gif);
+	
+}
+
+#bottom_wrapper {
+	text-align: center;
+	margin-right: auto; 
+	margin-left: auto;
+	width: 600px;
+	height: 100px;;
+/*	background-color: #3D8FCB;*/
+	overflow: hidden;
+}
+
+#bottom_foto_1 {
+	position: relative;
+	height: 100px;
+	width: auto;
+	float: left;
+	margin-left: 0px;
+}
+
+#bottom_foto_2 {
+	position: relative;
+	height: 100px;
+	width: auto;
+	float: right;
+	margin-left: 0px;
+}
+
+#bottom_tekst_1 {
+	padding-top: 20px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 18px;
+	float: left;
+	position: relative;
+	height: 100px;
+	width: auto;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+
+#bottom_tekst_1 br {
+	margin: 0px;
+}
+
+#bottom_tekst_2 {
+	padding-top: 20px;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	line-height: 12px;
+	float: right;
+	position: relative;
+	height: 60px;
+	width: auto;
+	margin: 10px;
+	border: 1px dotted #FFF;
+	padding: 10px;
+}
+
+#bottom_tekst_2 br {
+	margin: 0px;
+}
+
+#wrapper {
+	text-align: center;
+	margin-right: auto; 
+	margin-left: auto;
+	width: 600px;
+	height: 100%;
+	padding: 10px;
+}
+
+#posts {
+	width: 580px;
+	height: auto;
+	/*border: 1px solid #999;*/
+	padding: 10px;
+	text-align: left;
+	font-size: 14px;
+}
+
+#pages {
+	width: 580px;
+	height: auto;
+	border: 1px solid #3D8FCB;
+	padding: 10px;
+	text-align: left;
+	font-size: 14px;
+}
+
+#posts .overskrift {
+	font-size: 16px;
+	font-weight: bold;
+	color: #3D8FCB;
+	margin: 0px 0px 2px 0px;
+}
+
+#pages h1 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #3D8FCB;
+	margin: 0px 0px 2px 0px;
+}
+
+#pages p {
+	
+}
+
+
+
+
+#wrapper hr {
+	color: #3D8FCB;
+	background-color: #3D8FCB;
+	height: 1px;
+	margin: 0px;
+}

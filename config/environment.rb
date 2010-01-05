@@ -54,7 +54,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_kruby_session',
+    :session_key => '_bogholderiet_session',
     :secret      => '91f0b56bd7ce225451d290b92e3df757bed98bad7f1c22fec3e91056108b6db73be4725563b754e3d06c8c42fb80b297d3d5672d5aca43728442fd255c7028c5'
   }
 
@@ -81,10 +81,12 @@ end
 # gem 'named_scope'
 #   require 'has_finder'
 #   
+  gem "will_paginate"
+    require  "will_paginate"
   gem 'RedCloth'
        require 'RedCloth'
   
-  WillPaginate::ViewHelpers.pagination_options[:prev_label] = '<<'
+  WillPaginate::ViewHelpers.pagination_options[:previous_label] = '<<'
   WillPaginate::ViewHelpers.pagination_options[:next_label] = '>>'
 
   # silence_warnings do

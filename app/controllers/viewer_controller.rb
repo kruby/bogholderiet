@@ -5,7 +5,7 @@ class ViewerController < ApplicationController
 
     @page = Page.find(params[:id])
 
-    @pagetitle = @page.title rescue 'Indhold følger snarest'
+    @pagetitle = 'Bogholderiet - Silkeborg'
     @content = @page.body rescue 'Indhold følger snarest'
     @headline = @page.headline rescue 'Indhold følger snarest'
 

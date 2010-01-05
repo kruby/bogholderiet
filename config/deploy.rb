@@ -5,12 +5,12 @@ require 'brightbox/passenger'
 
 # The name of your application.  Used for deployment directory and filenames
 # and Apache configs. Should be unique on the Brightbox
-set :application, "kruby"
+set :application, "bogholderiet"
 
 # Primary domain name of your application. Used in the Apache configs
-set :domain, "www.kruby.dk"
+set :domain, "www.bogholderiet.dk"
 
-set :domain_aliases, 'kruby.dk'
+set :domain_aliases, "bogholderiet.dk,www.bogholderiet.dk,volert.dk,www.volert.dk"
 
 ## List of servers
 server "krsgrd-001.vm.brightbox.net", :app, :web, :db, :primary => true
@@ -20,9 +20,14 @@ set(:deploy_to) { File.join("", "home", user, application) }
 
 # URL of your source repository. This is the default one that comes on 
 # every Brightbox, you can use your own (we'll let you :)
-set :repository, "."
-set :scm, :none
+set :repository, "git@github.com:kruby/bogholderiet.git"
+set :scm, :git
 set :deploy_via, :copy
+set :branch, "master"
+
+# set :repository, "."
+# set :scm, :none
+# set :deploy_via, :copy
 
 ### Other options you can set ##
 # Comma separated list of additional domains for Apache

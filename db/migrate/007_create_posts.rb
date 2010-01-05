@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer  :priority,   :default => 1
       t.integer  :parent_id
       t.integer  :user_id
+      t.boolean  :active
 
       t.timestamps
       
