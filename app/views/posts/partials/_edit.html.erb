@@ -1,5 +1,5 @@
 <% form_for(@post) do |f| %>
-<h1>Redigering af post i bloggen
+<h1>Redigering af blog indlæg
 	<%= f.submit "[Opdater]", :class => 'button' %>
 	<%= link_to '[Vis]', @post %>
 	<%= link_to '[Tilbage]', bloggen_path %>
@@ -9,12 +9,12 @@
 <%= error_messages_for :post %>
 
   <p>
-    <b>Title</b><br />
+    <b>Titel</b><br />
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <b>Body</b><br />
+    <b>Brødtekst</b><br />
     <%= f.text_area :body, :size => '70x18' %>
   </p>
   

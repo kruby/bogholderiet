@@ -1,7 +1,7 @@
 <%= render :partial => "layouts/menu" %>
 <div id="admin_liste">
 	
-<h1>Listing posts <%= link_to '[Nyt indlæg]', new_post_path %></h1>
+<h1>Blog indlæg <%= link_to '[Nyt indlæg]', new_post_path %></h1>
 
 <table>
   <tr>
@@ -30,8 +30,8 @@
 	<td class="pos"><%=h nice_date(post.created_at) %></td>
 	<!-- <td class='pos'><%#= image_tag post.photo.url(:thumb) rescue nil %></td> -->
     <!-- <td class="pos"><%=h post.priority %></td> -->
-    <!-- <td><%#= link_to 'Vis', post %></td> -->
-    <td><%= link_to '[Ret]', edit_post_path(post) %><%= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- <td>/td> -->
+    <td><%= link_to '[Vis]', post_path(:id => post.id) %><%= link_to '[Ret]', edit_post_path(post) %><%= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -116,6 +116,7 @@ top: 187px;
 left: 150px;
 color:#000000;
 margin: 0px;
+padding-bottom: 30px;
 }
 #admin_formular p{
 	font-size:12px;
@@ -178,11 +179,10 @@ height:400px;*/
 #admin_formular input {
 	font-size:12px;
 	padding: 2px;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	font-weight:normal;
 	text-align:left;
-	color:#333333;
-	
+	color:#333333;	
 }
 
 #admin_formular textarea {

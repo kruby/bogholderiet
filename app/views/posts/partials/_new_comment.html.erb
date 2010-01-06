@@ -1,7 +1,4 @@
-<%#= render :partial => "layouts/menu" %>
-<div id="admin_formular">
-	
-<h1>Kommentar til: <%= @post_title %></h1>
+<h1>Blog-kommentar til: <%= @post_title %></h1>
 
 <%= error_messages_for :post %>
 
@@ -35,5 +32,3 @@
 <% end %>
 
 <%= link_to '[Tilbage]', posts_path %>
-
-</div>

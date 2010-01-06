@@ -1,7 +1,7 @@
 <%= render :partial => "layouts/menu" %>
 <div id="admin_formular">
 <p>
-  <b>Name:</b>
+  <b>Navn:</b>
   <%=h @content.name %>
 </p>
 
@@ -16,6 +16,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<%= link_to '[Ret]', edit_content_path(@content) %> |
+<%= link_to '[Tilbage]', contents_path %>
 </div>

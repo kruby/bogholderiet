@@ -7,7 +7,7 @@
 <% form_for(@page) do |f| %>
 <h1>Redigering af indholdssider
 	<%= f.submit "[Opdater]", :class => 'button'%>
-	<%= link_to '[Vis]', @page %>
+	<%= link_to '[Vis]', viewer_path(:id => @page.id) %>
 	<%= link_to '[Tilbage]', pages_path %>
 </h1>
 
@@ -17,31 +17,31 @@
 	<br />  
   </p>
 <p>
-    <b>Name</b><br />
+    <b>Navn</b><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <b>Title</b><br />
+    <b>Titel</b><br />
     <%= f.text_field :title %>
   </p>
   <p>
-	<b>Headline</b><br />
+	<b>Overskrift</b><br />
     <%= f.text_field :headline %>
   </p>
   <p>
-    <b>Body</b><br />
+    <b>Brødtekst</b><br />
     <%= f.text_area :body, :size => '70x20' %>
   </p>
 
-<p>
+<!-- <p>
     <b>Image</b><br />
-    <%= f.text_field :image %>
+    <%#= f.text_field :image %>
   </p>
 
 <p>
     <b>Image_Class</b><br />
-    <%= f.text_field :image_class %>
-  </p>
+    <%#= f.text_field :image_class %>
+  </p> -->
 
   
 <% end %>

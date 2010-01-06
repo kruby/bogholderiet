@@ -7,7 +7,11 @@ class Content < ActiveRecord::Base
 
 
   
-  #named_scope :parent_pages, :conditions => ["parent_id IS NULL and active", true], :order => 'position'
+  named_scope :parent_pages, :conditions => ["active", true], :order => 'id'
+  
+  def navlabel_and_id
+    "ID:#{id} - #{navlabel}"
+  end
   
   named_scope :admin_pages, :conditions => ["parent_id IS NULL and active", true], :order => 'position'
   named_scope :editor_pages, :conditions => ["parent_id IS NULL and active and category = 'editor' or category = 'public' or category = 'user' ", true], :order => 'position'

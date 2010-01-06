@@ -7,3 +7,4 @@ db/data_backup/*
 doc/api 
 doc/app
 *.log
+_noter.txt

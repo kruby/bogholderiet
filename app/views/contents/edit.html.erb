@@ -1,6 +1,6 @@
 <%= render :partial => "layouts/menu" %>
 <div id="admin_formular">
-<h1>Editing content</h1>
+<h1>Styringsmodul</h1>
 
 <%= error_messages_for :content %>
 
@@ -27,7 +27,8 @@
 
 <p>
     <b>Parent</b><br />
-    <%= f.text_field :parent_id %>
+    <%#= f.text_field :parent_id %>
+	<%= collection_select (:content, :parent_id, Content.parent_pages, :id, :navlabel_and_id, :include_blank => true, :class => 'menuliste' ) %>
   </p>
 
 <p>

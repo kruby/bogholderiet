@@ -130,8 +130,7 @@ class PostsController < ApplicationController
     session[:single_blog] = nil
     session[:page] = params[:page]
     
-    
-    
+    render :layout => 'viewer'
     
     #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
 
@@ -164,6 +163,9 @@ class PostsController < ApplicationController
     #       format.html # index.html.erb
     #       format.xml  { render :xml => @posts }
     #     end
+    
+    render :layout => 'viewer'
+    
   end 
   
 
@@ -173,12 +175,13 @@ class PostsController < ApplicationController
     session[:post_close] = nil
     #@posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => 'created_at DESC')
     #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
-    if session[:single_blog] == true
-      redirect_to(:action => 'show', :id => session[:post_id])
+    # if session[:single_blog] == true
+      redirect_to post_path (:id => session[:post_id])
+      #redirect_to(:action => 'blog', :id => session[:post_id])
       #redirect_to(:action => 'show_single_blog', :id => session[:post_id])
-    else
-      redirect_to(:action => 'list', :page => session[:page])
-    end
+    # else
+    #   redirect_to(:action => 'list', :page => session[:page])
+    # end
   end
   
   
@@ -188,12 +191,13 @@ class PostsController < ApplicationController
     session[:post_disclose] = nil
     #@posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => 'created_at DESC')
     #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
-    if session[:single_blog] == true
-      redirect_to(:action => 'show', :id => params[:id])
+    #if session[:single_blog] == true
+      redirect_to bloggen_path (:id => params[:id])
+      #redirect_to(:action => 'blog', :id => params[:id])
       #redirect_to(:action => 'show_single_blog', :id => params[:id])
-    else
-      redirect_to(:action => 'list', :page => session[:page])
-    end
+    #else
+      #redirect_to(:action => 'list', :page => session[:page])
+    #end
   end
   
   
@@ -203,11 +207,9 @@ class PostsController < ApplicationController
     @post_title = @post.title
     @post = Post.new
     
+    render :layout => 'application'
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @post }
-    end
+
   end
 
 

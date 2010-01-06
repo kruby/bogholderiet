@@ -2,8 +2,8 @@
 
 <% form_for(@post) do |f| %>
 <%= f.hidden_field(:user_id, :value => current_user.id) %>
-<h1>Nyt indlæg til bloggen
-	<%= f.submit "[Opret]", :class => 'button' %><%= link_to '[Vis]', @post %> <%= link_to '[Tilbage]', bloggen_path %>
+<h1>Nyt blog indlæg
+	<%= f.submit "[Opret]", :class => 'button' %><%= link_to '[Tilbage]', bloggen_path %>
 	
 	</h1>
 
@@ -35,12 +35,12 @@
 		</div> -->
 
 	  <p>
-	    <b>Title</b><br />
+	    <b>Titel</b><br />
 	    <%= f.text_field :title %>
 	  </p>
 
 	  <p>
-	    <b>Body</b><br />
+	    <b>Brødtekst</b><br />
 	    <%= f.text_area :body, :size => '60x18' %>
 	  </p>
 
