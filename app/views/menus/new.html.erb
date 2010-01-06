@@ -1,37 +1,34 @@
 <%= render :partial => "layouts/menu" %>
 <div id="admin_formular">
-	
-<h1>Nyt menupunkt</h1>
 
 <%= error_messages_for :menu %>
 
 <% form_for(@menu) do |f| %>
 
-  <p>
-    <b>Name</b><br />
-    <%= f.text_field :name %>
-  </p>
+<h1>Nyt menupunkt
+	<%= f.submit "[Opret]", :class => 'button'%><%= link_to '[Tilbage]', menus_path %>
+</h1>
 
-  <p>
-    <b>Title</b><br />
-    <%= f.text_field :title %>
-  </p>
+<p>
+	<b>Aktiv</b><br />
+	<%= f.check_box :active %>
+</p>
 
-  <p>
-    <b>Body</b><br />
-    <%= f.text_area :body %>
-  </p>
+<p>
+	<b>Navn</b><br />
+	<%= f.text_field :name %>
+</p>
 
-  <p>
-    <b>Active</b><br />
-    <%= f.check_box :active %>
-  </p>
+<p>
+	<b>Titel</b><br />
+	<%= f.text_field :title %>
+</p>
 
+<p>
+	<b>Beskrivelse</b><br />
+	<%= f.text_area :body %>
+</p>
 
-
-  <p>
-    <%= f.submit "[Opret]", :class => 'button'%><%= link_to '[Tilbage]', menus_path %>
-  </p>
 <% end %>
 
 

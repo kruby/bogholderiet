@@ -8,27 +8,27 @@
 <% form_for(@menu) do |f| %>
 
 <%= f.submit "[Opdater]", :class => 'button'%>
-	<%= link_to '[Vis]', @menu %>
+	<%#= link_to '[Vis]', @menu %>
 	<%= link_to '[Tilbage]', menus_path %>
+	
+<p>
+    <b>Aktiv</b><br />
+    <%= f.check_box :active %>
+  </p>
 
   <p>
-    <b>Name</b><br />
+    <b>Navn</b><br />
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <b>Title</b><br />
+    <b>Titel</b><br />
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <b>Body</b><br />
+    <b>Beskrivelse</b><br />
     <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <b>Active</b><br />
-    <%= f.check_box :active %>
   </p>
 
   

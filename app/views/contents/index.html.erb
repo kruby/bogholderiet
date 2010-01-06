@@ -45,24 +45,24 @@
   <tr>
     <td width=100px><%=h content.navlabel %></td>
 
-	<td width=65px class='pos'><%= link_to content.category, :action => 'category_content', :id => content.id rescue '-'%></td>
-	<td width=30px class='pos'><%=h content.position %></td>
-	<td width=30px class='pos'><%=h content.id %></td>
-	<td width=40px class='pos'><%=h content.parent_id %></td>
-	<td width=50px class='pos'><%=h content.resource_id %></td>
-	<td width=30px class='pos'><%=link_to active_test(content.active), :action => 'active', :id => content.id%></td>
-	<td width=30px class='pos'><%=link_to active_test(content.admin), :action => 'active_admin', :id => content.id%></td>
-	<td width=150px><%=h truncate(ct.find(ci).title, :length => 20) rescue nil -%></td>
-	<td width=100px><%=h content.controller_name %></td>
-    <td width=100px><%=h content.resource_type %></td>
-	<td width=30px class='pos'><%=link_to active_test(content.redirect), :action => 'active_redirect', :id => content.id%></td>
-	<td width=100px><%=h content.controller_redirect %></td>	
-	<td width=100px><%=h content.action_redirect %></td>	
+	<td class='pos'><%= link_to content.category, :action => 'category_content', :id => content.id rescue '-'%></td>
+	<td class='pos'><%=h content.position %></td>
+	<td class='pos'><%=h content.id %></td>
+	<td class='pos'><%=h content.parent_id %></td>
+	<td class='pos'><%=h content.resource_id %></td>
+	<td class='pos'><%=link_to active_test(content.active), :action => 'active', :id => content.id%></td>
+	<td class='pos'><%=link_to active_test(content.admin), :action => 'active_admin', :id => content.id%></td>
+	<td ><%=h truncate(ct.find(ci).title, :length => 20) rescue nil -%></td>
+	<td ><%=h content.controller_name %></td>
+    <td ><%=h content.resource_type %></td>
+	<td class='pos'><%=link_to active_test(content.redirect), :action => 'active_redirect', :id => content.id%></td>
+	<td ><%=h content.controller_redirect %></td>	
+	<td ><%=h content.action_redirect %></td>	
 		
 	
 	
 	
-    <td width=120px><%= link_to '[Vis]', content %>
+    <td width='auto'><%#= link_to '[Vis]', content %>
     <%= link_to '[Ret]', edit_content_path(content) %>
     <%= link_to '[Slet]', content, :confirm => 'Er du sikker?', :method => :delete %></td>
   </tr>
