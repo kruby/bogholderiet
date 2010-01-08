@@ -1,22 +1,60 @@
-<% for post in @posts %>
+<% if logged_in? %>
 
+	<ul id="sortable_posts">
+		<% for post in @posts %>
+		    <% content_tag_for :li, post do %>
+				<div class="blogpost">
 
-<div class="blogpost">
+					<div class="topline">
+						<span class="title">
+							<%#=h post.id %><%= post.title %><%#=h truncate(post.title, :length => 35) %></span>
+						</div> <!-- topline -->
+						<div class="date_time">
+						Oprettet: <%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> af 
+						<span class="author"><%=h User.find(post.user_id).blogname %></span>
+						<% if post.updated_at > post.created_at + 10.days %>
+						- Opdateret: <%=h post.updated_at.strftime("%d.%m.%y - %H:%M") %>
+						<% end %>
+						</div>
 
-	<div class="topline">
-		<span class="title">
-			<%#=h post.id %><%= post.title %><%#=h truncate(post.title, :length => 35) %></span>
-		</div> <!-- topline -->
-		<div class="date_time"><%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> - <span class="author"><%=h User.find(post.user_id).blogname %></span></div>
+						<div class="body">
+							<td class='tekst_foto_1'><%= textilize(post.body) %></td>
+							<td class='foto_1'> </td>
+						</div>
 
-		<div class="body">
-			<td class='tekst_foto_1'><%= textilize(post.body) %></td>
-			<td class='foto_1'> </td>
+				</div>
+				<hr>
+			<% end %>  
+		<% end %>
+	</ul>
+
+	<%= sortable_element("sortable_posts", :url => {:controller => 'posts', :action => 'sort_posts_positions'} )%>
+
+<% else %>	
+
+	<% for post in @posts %>
+		<div class="blogpost">
+
+			<div class="topline">
+				<span class="title">
+					<%#=h post.id %><%= post.title %><%#=h truncate(post.title, :length => 35) %></span>
+				</div> <!-- topline -->
+				<div class="date_time">
+				Oprettet: <%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> af 
+				<span class="author"><%=h User.find(post.user_id).blogname %></span>
+				<% if post.updated_at > post.created_at + 10.days %>
+				- Opdateret: <%=h post.updated_at.strftime("%d.%m.%y - %H:%M") %>
+				<% end %>
+				</div>
+
+				<div class="body">
+					<td class='tekst_foto_1'><%= textilize(post.body) %></td>
+					<td class='foto_1'> </td>
+				</div>
+
 		</div>
-
-</div>
-<hr>
-
-
-
+		<hr>
+		
 	<% end %>
+	
+<% end %>

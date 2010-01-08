@@ -7,7 +7,7 @@ class CreateContents < ActiveRecord::Migration
       t.integer  :parent_id
       t.string   :navlabel
       t.boolean  :active
-      t.boolean  :admin
+      t.boolean  :admin, :default => true
       t.integer  :position
       t.string   :controller_name
       t.string   :category, :default => "Admin"

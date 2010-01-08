@@ -41,7 +41,7 @@
 	<% if post.id == session[:post_id].to_i %>
 		<% unless post.children.empty? %>
 			<% @sub = post.children %>
-			<div class="backline"> Test</div>
+			<div class="backline"></div>
 		<% end %>
 	<% end %>
 	</div> <!-- Blogpost -->
@@ -73,7 +73,7 @@
 
 						<div class="body"><%= textilize(comment.body) %></div>
 			
-						<% if @counter < @comments %><div class="backline">Test</div><% end %>
+						<% if @counter < @comments %><div class="backline"></div><% end %>
 			
 						</div>
 

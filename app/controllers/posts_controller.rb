@@ -151,20 +151,10 @@ class PostsController < ApplicationController
       @posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => "author DESC")
     else
       @posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => "created_at ASC")
-    # elsif session[:sorter] == 30
-    #       @posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => "comments ASC")
-    #     elsif session[:sorter] == 31
-    #       @posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => "comments DESC")
     end
-    #@posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => 'created_at DESC')
-    #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
-
-    # respond_to do |format|
-    #       format.html # index.html.erb
-    #       format.xml  { render :xml => @posts }
-    #     end
-    
-    render :layout => 'viewer'
+      
+    #render :layout => 'viewer'
+    miniblog_path
     
   end 
   
@@ -176,7 +166,7 @@ class PostsController < ApplicationController
     #@posts = Post.find(:all, :conditions => ["parent_id IS NULL", true], :order => 'created_at DESC')
     #@subposts = Post.find_all_by_parent_id(:order => 'created_at DESC')
     # if session[:single_blog] == true
-      redirect_to post_path (:id => session[:post_id])
+      redirect_to bloggen_path (:id => session[:post_id])
       #redirect_to(:action => 'blog', :id => session[:post_id])
       #redirect_to(:action => 'show_single_blog', :id => session[:post_id])
     # else
@@ -231,6 +221,13 @@ class PostsController < ApplicationController
         format.html { redirect_to(:action => 'list', :page => session[:page]) }
         format.xml  { head :ok }
       end
+  end
+  
+  def sort_posts_positions
+    params[:sortable_posts].each_with_index do |id, index|
+      Post.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
   end
   
   def sorter_dato

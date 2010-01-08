@@ -1,16 +1,29 @@
 <% @tabs.each do |page| -%> <!-- @tabs kommer fra application.rb -->
 
-	<% if page.admin == true # and Menu.find(page.id).category == current_user.category %>
-		<li class="admin_navlabel">
-		<%= link_to page.navlabel, {:controller => page.controller_name, :action => 'index'} %> <!-- Alle admin sider ledes videre til deres index i views -->
-		<% @c = page.children %>
+	<% if page.category == 'Public' %>
+		<li class="user_navlabel">
+			<% if page.redirect? %>
+					<%= link_to page.navlabel, {:controller => page.controller_redirect, :action => page.action_redirect, :id => page.resource_id} %>
+			<% else %>
+				
+				<!-- Her tages specielt hensyn til forsiden, der ikke skal vises som -->
+				<% if page.controller_name == 'forside'%>
+					<li><%= link_to page.controller_name.mb_chars.capitalize, root_url %>
+				<% else %>
+					<%= link_to page.navlabel, {:controller => page.controller_name} %> <!-- Alle admin sider ledes videre til deres index i views -->
+		    	<% end %>
+			
+			<% end %>
 		
-		<%= render :partial => "menusystem/menu_level_2_admin" %>
+		<% @level_2 = page.children %>
+		
+		<%= render :partial => "menusystem/menu_level_2" %>
 		
 	<% else %>
-		<li class="user_navlabel"><%= link_to page.navlabel, {:controller => 'viewer', :name => page.navlabel.downcase, :action => 'show'} %>
+		<li class="admin_navlabel"><%= link_to page.navlabel, {:controller => page.controller_name} %>
+		<%#= link_to page.navlabel, {:controller => 'viewer', :name => page.navlabel.downcase, :action => 'show'} %>
 		<%#= link_to page.navlabel, {:controller => page.controller_name, :action => 'show', :id => page.resource_id} %>
-		<% @c = page.children %>
+		<% @level_2 = page.children %>
 		
 		<%= render :partial => "menusystem/menu_level_2" %>
 		

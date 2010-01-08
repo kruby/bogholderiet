@@ -24,12 +24,13 @@ class ApplicationController < ActionController::Base
       elsif current_user.category == 'User'
         @tabs ||= Content.user_pages
       end
-      
     else
       @tabs ||= Content.public_pages # public_pages kommer fra content.rb (modellen)
     end
     
-    @main_menu ||= Content.pages.active.not_admin # main_menu kommer fra content.rb
+    #@main_menu ||= Content.pages.not_admin.active + Content.menus.not_admin.active # main_menu kommer fra content.rb
+    
+    @main_menu ||= Content.public_pages
     
     
     @mangler = 'Indhold følger snarest'

@@ -34,7 +34,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :posts
   
+  map.forside '/forside', :controller => "viewer", :name => 'forside', :action => 'forside'
   map.bloggen '/bloggen', :controller => 'posts', :action => 'blog'
+  map.bloggen '/bloggen/:id', :controller => 'posts', :action => 'blog'
   map.miniblog '/miniblog', :controller => 'posts', :action => 'mini_blog'
   map.sorter_dato '/sorter_dato', :controller => 'posts', :action => 'sorter_dato'
   map.sorter_forfatter '/sorter_forfatter', :controller => 'posts', :action => 'sorter_forfatter'

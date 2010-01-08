@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 14) do
+ActiveRecord::Schema.define(:version => 20100107222315) do
 
   create_table "assets", :force => true do |t|
     t.string   "description"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(:version => 14) do
     t.string   "title"
     t.text     "body"
     t.string   "author"
-    t.integer  "priority",   :default => 1
+    t.integer  "position",   :default => 1
     t.integer  "parent_id"
     t.integer  "user_id"
     t.boolean  "active"

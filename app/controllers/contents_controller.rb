@@ -6,15 +6,14 @@ class ContentsController < ApplicationController
        @content = Content.find(params[:id])
        if @content.category == 'Admin'
          @content.category = 'Editor'
-         #@content.priority = 2 #priority får en værdi så det bliver nemmere at sortere i index listen
        elsif @content.category == 'Editor'
          @content.category = 'User'
-         #@content.priority = 3
        elsif @content.category == 'User'
+         @content.category = 'Public'
+       elsif @content.category == 'Public'
          @content.category = 'Admin'
        elsif @content.category == nil
           @content.category = 'Admin'
-         #@content.priority = 1
        end
        
        @content.update_attributes(params[:applicant])

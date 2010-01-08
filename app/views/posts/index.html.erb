@@ -14,7 +14,7 @@
     <th>Forfat.</th>
 	<th class='pos'> Opret.</th>
 	<!-- <th>Foto</th> -->
-    <!-- <th>Prio.</th> -->
+    <th>Pos.</th>
 	<th>Handling</th>
   </tr>
 
@@ -29,7 +29,7 @@
     <td class="pos"><%=h User.find(post.user_id).blogname %></td>
 	<td class="pos"><%=h nice_date(post.created_at) %></td>
 	<!-- <td class='pos'><%#= image_tag post.photo.url(:thumb) rescue nil %></td> -->
-    <!-- <td class="pos"><%=h post.priority %></td> -->
+    <td class="pos"><%=h post.position %></td>
     <!-- <td>/td> -->
     <td><%= link_to '[Vis]', post_path(:id => post.id) %><%= link_to '[Ret]', edit_post_path(post) %><%= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

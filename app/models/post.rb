@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   acts_as_tree :order => 'created_at DESC'
   
   named_scope :forside_blogs, :order => 'created_at DESC'
-  named_scope :forside_blogs_active, :conditions => ["active", true], :order => 'created_at DESC'
+  named_scope :forside_blogs_active, :conditions => ["active", true], :order => 'position, created_at DESC'
   
   named_scope :admin_pages, :conditions => ["parent_id IS NULL and active", true], :order => 'position'
   

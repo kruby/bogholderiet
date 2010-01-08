@@ -6,40 +6,22 @@
 
 <% @main_menu.each do |menu| -%>
 
-	<% if menu.redirect? %>
-	<% @controller_name = menu.controller_redirect %>
-	<% @action_name = menu.action_redirect %>
+	<% if menu.controller_name == 'forside'%>
+		<li><%= link_to menu.navlabel.mb_chars.upcase, root_url %></li>
 	<% else %>
-	<% @controller_name = menu.controller_name %>
-	<% @action_name = 'show' %>
-	<% end %>
-
-	<% if @main_menu[1] == nil %>
-	<li class="border_left">
-	<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %></li>
 	
-	<%else%>
-
-		<% if @action_name == 'forside'%>
-			<li class="border_left"><%= link_to menu.navlabel.mb_chars.upcase, root_url %></li>
+		<% if menu.redirect? %>
+			<li>
+			<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_redirect, :action => menu.action_redirect, :id => menu.resource_id %>
+			</li>
+			
 		<% else %>
-			<% unless @last_one == menu.id %>
 			<li>
-			<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
+			<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_name %>
 			</li>
-			<% end %>
-		<%end %>
-	
-	
-	
-		<% if @last_one == menu.id%>
-			<li>
-			<%= link_to menu.navlabel.mb_chars.upcase, :controller => @controller_name, :action => @action_name, :id => menu.resource_id %>
-			</li>
-		
 		<% end %>
 		
-	<% end %>
+	<%end %>
 	
 <% end %>
 
