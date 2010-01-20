@@ -111,7 +111,7 @@ background-color: #BAD6E9;
 }
 
 #admin_blog .blogpost {
-	z-index: 100;
+	/*z-index: 0;*/
 	width: auto;
 	position: relative;
 	left: 0px;

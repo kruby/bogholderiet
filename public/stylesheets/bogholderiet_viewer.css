@@ -14,7 +14,7 @@ br {
 }
 
 body {
-	margin: 0px;
+	margin: 0px 0px 140px 0px;
 }
 
 .top_logo {
@@ -31,6 +31,15 @@ body {
 /*#top_bar_1 * {
 	background-color: #FFFFFF;
 }*/
+
+
+.mail_link {
+	text-decoration: none;
+	color:#3D8FCB;
+	font-size: 14px;
+	font-family: Times;
+}
+
 
 #top_bar_1 {
 	color: #000;
@@ -244,7 +253,7 @@ body {
 	padding: 10px;
 	text-align: left;
 	font-size: 14px;
-	background-color: #DBF0FF;
+	background-color: #D1E2F5;
 }
 
 #posts .overskrift {
@@ -263,7 +272,7 @@ body {
 }
 
 #pages p {
-	
+	line-height: 18px;	
 }
 
 
