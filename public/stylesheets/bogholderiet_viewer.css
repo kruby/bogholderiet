@@ -271,6 +271,22 @@ body {
 	margin: 0px 0px 2px 0px;
 }
 
+#pages h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #3D8FCB;
+	margin: 0px 0px 2px 0px;
+}
+
+#pages h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3D8FCB;
+	margin: 0px 0px 2px 0px;
+}
+
 #pages p {
 	line-height: 18px;	
 }
