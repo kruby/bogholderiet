@@ -73,6 +73,10 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
+  
+  #config.gem "searchlogic"
+  config.gem "RedCloth"
+  config.gem "will_paginate"
 
 end
 
@@ -81,10 +85,10 @@ end
 # gem 'named_scope'
 #   require 'has_finder'
 #   
-  gem "will_paginate"
-    require  "will_paginate"
-  gem 'RedCloth'
-       require 'RedCloth'
+  # gem "will_paginate"
+  #   require  "will_paginate"
+  # gem 'RedCloth'
+  #      require 'RedCloth'
   
   WillPaginate::ViewHelpers.pagination_options[:previous_label] = '<<'
   WillPaginate::ViewHelpers.pagination_options[:next_label] = '>>'
