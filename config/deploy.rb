@@ -143,5 +143,5 @@ set :mongrel_port, 9500
 # lingering until the workers time out
 # set :passenger_restart_strategy, :hard
 
-depend :remote, :gem, "will_paginate", ">=2.3.12"
-depend :remote, :gem, "RedCloth", ">=4.2.3"
+#depend :remote, :gem, "will_paginate", ">=2.3.12"
+#depend :remote, :gem, "RedCloth", ">=4.2.3"
