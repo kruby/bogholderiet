@@ -15,6 +15,8 @@ br {
 
 body {
 	margin: 0px 0px 140px 0px;
+	height: 100%;
+	overflow: auto;
 }
 
 .top_logo {
