@@ -13,11 +13,17 @@ br {
 	margin-bottom: 7px;
 }
 
-body {
-	margin: 0px 0px 140px 0px;
+html, body {
+	margin: 0px 0px 0px 0px;
 	height: 100%;
-	overflow: auto;
+	padding: 0;
 }
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+
 
 .top_logo {
 	margin: 0px;
@@ -152,11 +158,14 @@ body {
 	font-size: 11px;
 }
 
+#body {
+   padding:10px;
+   padding-bottom:110px;   /* Height of the footer */
+}
 
 #bottom_bar {
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
+	position: absolute;
+	bottom: 0;
 	color: #FFFFFF;
 /*	background-color: #3D8FCB;*/
 	height: 110px;
@@ -235,8 +244,9 @@ body {
 	margin-right: auto; 
 	margin-left: auto;
 	width: 600px;
-	height: 100%;
+	min-height: 100%;
 	padding: 10px;
+	position: relative
 }
 
 #posts {

@@ -12,69 +12,78 @@
 </head>
 
 <body>
-	<%#= test_web_browser %>
-	<%= @browser %>
+<div id="container">
+		
+
+		<%#= test_web_browser %>
+		<%= @browser %>
 
 
-	<div id="top_bar_1">
+		<div id="top_bar_1">
 
-		<div id="top_wrapper">
-			<div id="top_foto_1">
-				<img src="../images/bogholderiet_logo.gif">
-				<p class="logo_tekst">- giver dig tid til at tjene penge...</p>
+			<div id="top_wrapper">
+				<div id="top_foto_1">
+					<img src="../images/bogholderiet_logo.gif">
+					<p class="logo_tekst">- giver dig tid til at tjene penge...</p>
+
+				</div>
+				<!-- <div id="top_foto_2">
+				<img src="rolig_figur.gif" class="rolig_figur">
+
+	</div> -->
+	<div id="top_tekst">
+		Bogholderiet<br>
+		Poppelvænget 2<br>
+		8600 Silkeborg<br>
+		Tlf. 51 76 87 81<br>
+		<%= mail_to("dorthe@volert.dk", nil, :class => "mail_link") %><br>
+	</div>
+
+	</div>
+
+	</div>
+	<div id="menu_bar">
+		<div id="menu_wrapper">
+			<%= render :partial => "layouts/menu_forside" %>
+		</div>
+	</div>
+
+	<!-- <div id="body">
+	
+	</div> -->
+
+	<div id="wrapper">
+
+
+			<%= yield%>
+
+
 
 			</div>
-			<!-- <div id="top_foto_2">
-			<img src="rolig_figur.gif" class="rolig_figur">
 
-</div> -->
-<div id="top_tekst">
-	Bogholderiet<br>
-	Poppelvænget 2<br>
-	8600 Silkeborg<br>
-	Tlf. 51 76 87 81<br>
-	<%= mail_to("dorthe@volert.dk", nil, :class => "mail_link") %><br>
-</div>
+			<div id="bottom_bar">
+				<div id="bottom_wrapper">
 
-</div>
+					<div id="bottom_foto_1">
+						<img src="../images/urolig_figur.gif" class="rolig_figur">
 
-</div>
-<div id="menu_bar">
-	<div id="menu_wrapper">
-		<%= render :partial => "layouts/menu_forside" %>
+					</div>
+					<div id="bottom_tekst_1">
+						Har du regnet ud hvor meget bøvl du bliver sparet for,<br>
+						når Bogholderiet klarer bureaukratiet?
+					</div>
+					<div id="bottom_foto_2">
+						<img src="../images/rolig_figur_nede.gif" class="rolig_figur">
+
+					</div>
+					<!-- <div id="bottom_tekst_2">
+					LINKS:<br>
+					www.skat.dk
+
+			</div> -->
+			</div>
+
 	</div>
-</div>
-
-<div id="wrapper">
-
-
-<%= yield%>
-
-
-
-</div>
-
-<div id="bottom_bar">
-	<div id="bottom_wrapper">
-
-		<div id="bottom_foto_1">
-			<img src="../images/urolig_figur.gif" class="rolig_figur">
-
-		</div>
-		<div id="bottom_tekst_1">
-			Har du regnet ud hvor meget bøvl du bliver sparet for,<br>
-			når Bogholderiet klarer bureaukratiet?
-		</div>
-		<div id="bottom_foto_2">
-			<img src="../images/rolig_figur_nede.gif" class="rolig_figur">
-
-		</div>
-		<!-- <div id="bottom_tekst_2">
-		LINKS:<br>
-		www.skat.dk
-
-</div> -->
-</div>
 
 </div>
 
